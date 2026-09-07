@@ -26,8 +26,8 @@ is excluded with a detector whose power was proven on synthetic ciphertext first
 
 The key-source hunt that followed is in [outguess/RESULTS.md](outguess/RESULTS.md): outguess over
 all 75 page images (no key and 96 keys) recovers every known 2014 payload and nothing else, the
-page-56 SHA-512 matches none of 697,000 archive candidates, and neither the no-key payloads nor the
-2014 growing string is the keystream; the page-image byte scan is scripted there and was still running at the last commit.
+page-56 SHA-512 matches none of 697,000 archive candidates, and none of the no-key payloads, the
+2014 growing string or the raw bytes of the page images is the keystream.
 
 ## Reproduce
 

@@ -52,4 +52,63 @@ on 400-rune windows; the positive control recovers a planted key at the right of
 
 **Growing string** (2014 second onion, 1,820,650 bytes) **as a running key,** every offset, raw and chain forms, both signs: best IoC per section p0-2 1.145, p3-7 1.170, p8-14 1.159, p15-22 1.147, p23-26 1.145, p27-32 1.156, p33-39 1.156, p40-53 1.151, p54-55 1.206 (307-rune window, ceiling about 1.23), against a noise ceiling of about 1.20 for 1.8 million offsets. Not the keystream. Complete.
 
-**Page images (raw JPEG bytes) as running keys for their own section:** scan in progress at commit time (4 of 58 images, all below noise so far: best 1.144 against about 1.19); the final table is appended when it completes.
+**Page images (raw JPEG bytes) as running keys for their own section,** every offset, raw and chain forms, both signs: 56 images tested, best IoC 1.195 (72.jpg vs p54-55), none above its per-image noise ceiling. Not the keystream. Complete.
+
+| image | section | best IoC | noise ceiling |
+|---|---|---|---|
+| 17.jpg | p0-2 | 1.143 | 1.195 |
+| 18.jpg | p0-2 | 1.129 | 1.194 |
+| 19.jpg | p0-2 | 1.148 | 1.193 |
+| 20.jpg | p3-7 | 1.144 | 1.193 |
+| 21.jpg | p3-7 | 1.150 | 1.194 |
+| 22.jpg | p3-7 | 1.145 | 1.194 |
+| 23.jpg | p3-7 | 1.137 | 1.193 |
+| 24.jpg | p3-7 | 1.154 | 1.193 |
+| 25.jpg | p8-14 | 1.153 | 1.194 |
+| 26.jpg | p8-14 | 1.152 | 1.194 |
+| 27.jpg | p8-14 | 1.138 | 1.194 |
+| 28.jpg | p8-14 | 1.151 | 1.194 |
+| 29.jpg | p8-14 | 1.138 | 1.194 |
+| 30.jpg | p8-14 | 1.141 | 1.194 |
+| 31.jpg | p8-14 | 1.137 | 1.191 |
+| 32.jpg | p15-22 | 1.141 | 1.192 |
+| 33.jpg | p15-22 | 1.159 | 1.193 |
+| 34.jpg | p15-22 | 1.153 | 1.193 |
+| 35.jpg | p15-22 | 1.141 | 1.193 |
+| 36.jpg | p15-22 | 1.152 | 1.193 |
+| 37.jpg | p15-22 | 1.143 | 1.193 |
+| 38.jpg | p15-22 | 1.133 | 1.193 |
+| 39.jpg | p15-22 | 1.153 | 1.192 |
+| 40.jpg | p23-26 | 1.138 | 1.192 |
+| 41.jpg | p23-26 | 1.161 | 1.194 |
+| 42.jpg | p23-26 | 1.133 | 1.194 |
+| 43.jpg | p23-26 | 1.129 | 1.194 |
+| 44.jpg | p27-32 | 1.120 | 1.193 |
+| 45.jpg | p27-32 | 1.136 | 1.193 |
+| 46.jpg | p27-32 | 1.138 | 1.193 |
+| 47.jpg | p27-32 | 1.136 | 1.193 |
+| 48.jpg | p27-32 | 1.144 | 1.193 |
+| 49.jpg | p27-32 | 1.155 | 1.190 |
+| 50.jpg | p33-39 | 1.142 | 1.192 |
+| 51.jpg | p33-39 | 1.136 | 1.193 |
+| 52.jpg | p33-39 | 1.130 | 1.193 |
+| 53.jpg | p33-39 | 1.155 | 1.192 |
+| 54.jpg | p33-39 | 1.129 | 1.192 |
+| 55.jpg | p33-39 | 1.148 | 1.192 |
+| 56.jpg | p33-39 | 1.146 | 1.193 |
+| 57.jpg | p40-53 | 1.146 | 1.195 |
+| 58.jpg | p40-53 | 1.183 | 1.195 |
+| 59.jpg | p40-53 | 1.144 | 1.195 |
+| 60.jpg | p40-53 | 1.149 | 1.195 |
+| 61.jpg | p40-53 | 1.132 | 1.195 |
+| 62.jpg | p40-53 | 1.145 | 1.195 |
+| 63.jpg | p40-53 | 1.143 | 1.195 |
+| 64.jpg | p40-53 | 1.137 | 1.195 |
+| 65.jpg | p40-53 | 1.161 | 1.196 |
+| 66.jpg | p40-53 | 1.135 | 1.194 |
+| 67.jpg | p40-53 | 1.135 | 1.193 |
+| 68.jpg | p40-53 | 1.130 | 1.194 |
+| 69.jpg | p40-53 | 1.149 | 1.195 |
+| 70.jpg | p40-53 | 1.129 | 1.195 |
+| 71.jpg | p54-55 | 1.186 | 1.195 |
+| 72.jpg | p54-55 | 1.195 | 1.194 |

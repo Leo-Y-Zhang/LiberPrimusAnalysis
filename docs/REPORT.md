@@ -151,7 +151,7 @@ payload byte for byte and nothing else: the unsolved pages give 58,152 bytes of 
 without a key, and every keyed extraction repeats the same bytes across most pages because the
 near-white pages share DCT coefficients at the key-selected positions. Hashing 692,438
 candidates from the archive and all 4,521 payloads against the page-56 SHA-512 found no match.
-The remaining thread is a physical re-examination of the doublet sites on the print edition.
+The archive's 3.6-million-character growing string and the raw bytes of every page image were also scanned as running keys at every offset and are below noise. The remaining thread is a physical re-examination of the doublet sites on the print edition.
 
 ## Sources
 
