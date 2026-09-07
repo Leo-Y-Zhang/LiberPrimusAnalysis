@@ -1,0 +1,32 @@
+POSITIVE CONTROL: synthetic chain (prime key, s-1 embedding, EA->0, key consumed at EA):
+   consume_at_EA=True -> best (1.6626947302723967, ('prime', 51, 1, 's-1', 'A'))
+   consume_at_EA=False -> best (1.6626947302723967, ('prime', 51, 1, 's-1', 'B'))
+
+ATTACK on unsolved sections (first 500 steps, all bijections, 300 offsets, both signs, both conventions):
+   p0-2     best IoC28=1.088 ('fib', 38, 1, 'dlog2', 'A')
+   p3-7     best IoC28=1.086 ('phi(n)', 205, 1, 'dlog2', 'B')
+   p8-14    best IoC28=1.113 ('pi', 274, 1, 's-1', 'A')
+   p15-22   best IoC28=1.082 ('gap', 260, 1, 's-1', 'A')
+   p23-26   best IoC28=1.085 ('pi', 75, -1, 'dlog3', 'B')
+   p27-32   best IoC28=1.096 ('prime^2', 240, -1, 'dlog2', 'A')
+   p33-39   best IoC28=1.079 ('cumsum_prime', 9, 1, 'dlog2', 'A')
+   p40-53   best IoC28=1.077 ('phi(n)', 69, 1, 'dlog2', 'A')
+   p54-55   best IoC28=1.146 ('n^3', 25, 1, 'dlog8', 'A')
+
+POWER: shared running key between two English texts, overlap 1200: kappa vs IoC-of-differences
+   true alignment: kappa=0.0592  IoC(diff)=1.047
+   null kappa mean=0.0367 sd=0.0056 -> z=4.0 ; null IoCdiff mean=1.000 sd=0.006 -> z=7.8
+
+RE-SCAN cross-section shared key with IoC(diff) at all shifts (overlap >= 300):
+   p15-22   p33-39   z=3.3 shift=1598 overlap=305
+   p3-7     p8-14    z=2.9 shift=-1323 overlap=406
+   p40-53   p54-55   z=2.9 shift=1533 overlap=308
+   p8-14    p54-55   z=2.8 shift=1063 overlap=308
+   p15-22   p54-55   z=2.7 shift=855 overlap=308
+   p23-26   p54-55   z=2.7 shift=165 overlap=308
+   p0-2     p27-32   z=2.7 shift=-1122 overlap=311
+   p33-39   p33-39   z=2.7 shift=-1265 overlap=415
+   p40-53   p40-53   z=2.7 shift=-2706 overlap=302
+   p33-39   p54-55   z=2.7 shift=658 overlap=308
+   p27-32   p54-55   z=2.5 shift=1023 overlap=308
+   p3-7     p54-55   z=2.5 shift=721 overlap=308

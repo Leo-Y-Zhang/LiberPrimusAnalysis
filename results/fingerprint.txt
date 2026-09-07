@@ -1,0 +1,90 @@
+P(F) in LP plaintext = 0.0161 ; in W&P = 0.0202
+doublet rate: LP plain 0.0259, W&P 0.0367, unsolved cipher 0.0066 (random 0.0345)
+cipher doublet count 86 of 12955 pairs; binomial std if rate=1/29: 20.8
+
+Cipher Δc = c_i - c_{i-1} distribution (count, z vs uniform):
+  Δ= 0  n=  86  z=-17.4 <==
+  Δ= 1  n= 459  z=+0.6
+  Δ= 2  n= 504  z=+2.8
+  Δ= 3  n= 440  z=-0.3
+  Δ= 4  n= 438  z=-0.4
+  Δ= 5  n= 446  z=-0.0
+  Δ= 6  n= 430  z=-0.8
+  Δ= 7  n= 470  z=+1.1
+  Δ= 8  n= 426  z=-1.0
+  Δ= 9  n= 510  z=+3.0 <==
+  Δ=10  n= 497  z=+2.4
+  Δ=11  n= 455  z=+0.4
+  Δ=12  n= 449  z=+0.1
+  Δ=13  n= 504  z=+2.8
+  Δ=14  n= 474  z=+1.3
+  Δ=15  n= 470  z=+1.1
+  Δ=16  n= 449  z=+0.1
+  Δ=17  n= 404  z=-2.1
+  Δ=18  n= 434  z=-0.6
+  Δ=19  n= 474  z=+1.3
+  Δ=20  n= 467  z=+1.0
+  Δ=21  n= 463  z=+0.8
+  Δ=22  n= 421  z=-1.2
+  Δ=23  n= 486  z=+1.9
+  Δ=24  n= 468  z=+1.0
+  Δ=25  n= 467  z=+1.0
+  Δ=26  n= 457  z=+0.5
+  Δ=27  n= 476  z=+1.4
+  Δ=28  n= 431  z=-0.8
+IoC of Δc(lag1)=1.024  Δc(lag2)=0.999  Σc(lag1)=1.000  Δc(lag3)=1.000
+doublet rate at lag2 (c_i==c_{i-2}): 0.0340  lag3: 0.0339
+
+Per-section doublets: total / at word boundary / within word / expected random:
+  p0-2     total=  4 boundary=  2 within=  2  exp_total=25.1
+  p3-7     total=  6 boundary=  2 within=  4  exp_total=39.4
+  p8-14    total=  9 boundary=  2 within=  7  exp_total=59.6
+  p15-22   total= 10 boundary=  0 within= 10  exp_total=65.6
+  p23-26   total= 11 boundary=  2 within=  9  exp_total=35.2
+  p27-32   total= 13 boundary=  5 within=  8  exp_total=49.4
+  p33-39   total= 12 boundary=  4 within=  8  exp_total=57.9
+  p40-53   total= 18 boundary=  4 within= 14  exp_total=103.7
+  p54-55   total=  3 boundary=  2 within=  1  exp_total=10.6
+
+encryption of LP plaintext (n=2979)           dblrate    ioc    chi2 lag2dbl
+UNSOLVED CIPHERTEXT                            0.0066  1.000     6.1  0.0340   <== TARGET (unsolved cipher)
+vigenere key len 8 (random key)                0.0326  1.107   346.1  0.0366
+vigenere key len 13 (random key)               0.0212  1.015    73.9  0.0329
+vigenere key len 29 (random key)               0.0376  1.031   121.6  0.0366
+totient stream (p_n - 1)                       0.0353  0.999    23.8  0.0413
+prime stream (p_n)                             0.0353  0.999    23.8  0.0413
+prime stream squared                           0.0356  1.036   133.9  0.0363
+fibonacci stream                               0.0383  1.047   167.4  0.0393
+trithemius (i)                                 0.0356  0.999    23.6  0.0329
+i^2 stream                                     0.0410  1.028   111.5  0.0403
+ciphertext autokey c=p+c_prev                  0.0161  0.998    22.8  0.0292
+ciphertext autokey c=p-c_prev                  0.0299  0.998    21.5  0.0259
+plaintext autokey c=p+p_prev                   0.0537  1.141   448.3  0.0292
+plaintext autokey lag5                         0.0406  1.065   222.4  0.0336
+plain diff c=p-p_prev                          0.0369  1.124   398.1  0.0359
+running key English (W&P) vig                  0.0386  1.045   162.6  0.0329
+running key English (W&P) beaufort             0.0366  1.050   177.3  0.0376
+running key LP plaintext itself offset 500     0.0346  1.064   219.8  0.0420
+affine a=2 b=7 (monoalphabetic)                0.0259  1.780  2351.5  0.0537
+OTP random                                     0.0332  1.001    30.8  0.0309
+chain c=c_prev+p+1                             0.0067  1.001    30.8  0.0269
+vigenere len 8 with F-interrupts               0.0353  1.104   338.0  0.0366
+totient with F-interrupts                      0.0319  1.010    56.5  0.0373
+running key English with F-interrupts          0.0406  1.039   145.3  0.0333
+
+wordlen  cipher%  LPplain%  W&P%
+   1      3.0      3.8      4.2
+   2     15.5     24.1     22.3
+   3     24.8     23.6     23.2
+   4     17.6     17.7     15.8
+   5     10.9      7.7     10.1
+   6      8.8      8.8      9.2
+   7      7.4      6.4      5.9
+   8      5.4      3.4      4.3
+   9      2.7      2.2      2.6
+  10      1.8      1.2      1.2
+  11      1.1      0.5      0.6
+  12      0.6      0.3      0.3
+  13      0.1      0.3      0.1
+  14      0.1      0.1      0.0
+mean word length: cipher 4.47  LP plain 4.03  W&P 4.12

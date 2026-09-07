@@ -1,0 +1,64 @@
+LP plaintext letter frequencies (n=2979):
+   F:0.0161 U:0.0514 TH:0.0386 O:0.0859 R:0.0645 C:0.0305 G:0.0134 W:0.0329 H:0.0302 N:0.0608 I:0.0618 J:0.0010 EO:0.0000 P:0.0138 X:0.0017 S:0.0668 T:0.0658 B:0.0134 E:0.1276 M:0.0255 L:0.0366 NG:0.0104 OE:0.0000 D:0.0393 A:0.0728 AE:0.0007 Y:0.0265 IO:0.0054 EA:0.0067
+  target doublet rate 0.0066 +- 0.0007 -> candidates: ['IO', 'EA']
+
+=== chain increments u=(Δc-1) mod 28, sequence key (mod 28) ===
+  p0-2     n=724 top: 1.061 phi(n)@166- | 1.052 phi(n)@0- | 1.052 2*prime@13-
+  p3-7     n=1138 top: 1.046 2*prime@134+ | 1.028 prime-1@69+ | 1.028 prime+1@69+
+  p8-14    n=1719 top: 1.020 phi(n)@179- | 1.018 prime_cumsum@146- | 1.016 2*prime@140+
+  p15-22   n=1892 top: 1.020 prime-1@183- | 1.020 prime+1@183- | 1.020 prime@183-
+  p23-26   n=1009 top: 1.029 prime-1@48+ | 1.029 prime+1@48+ | 1.029 prime@48+
+  p27-32   n=1419 top: 1.023 prime_cumsum@26- | 1.023 prime_cumsum@95+ | 1.022 fib@170+
+  p33-39   n=1667 top: 1.023 prime-1@96- | 1.023 prime+1@96- | 1.023 prime@96-
+  p40-53   n=2989 top: 1.010 2^n@198+ | 1.010 2^n@195+ | 1.010 2^n@192+
+  p54-55   n=304 top: 1.122 prime^2@108+ | 1.099 2*prime@191+ | 1.092 2*prime@107+
+=== chain increments backwards, sequence key (mod 28) ===
+  p0-2     n=724 top: 1.061 phi(n)@166+ | 1.052 phi(n)@0+ | 1.052 2*prime@13+
+  p3-7     n=1138 top: 1.046 2*prime@134- | 1.028 prime-1@69- | 1.028 prime+1@69-
+  p8-14    n=1719 top: 1.020 phi(n)@179+ | 1.018 prime_cumsum@146+ | 1.016 2*prime@140-
+  p15-22   n=1892 top: 1.020 prime-1@183+ | 1.020 prime+1@183+ | 1.020 prime@183+
+  p23-26   n=1009 top: 1.029 prime-1@48- | 1.029 prime+1@48- | 1.029 prime@48-
+  p27-32   n=1419 top: 1.023 prime_cumsum@26+ | 1.023 prime_cumsum@95- | 1.022 fib@170-
+  p33-39   n=1667 top: 1.023 prime-1@96+ | 1.023 prime+1@96+ | 1.023 prime@96+
+  p40-53   n=2989 top: 1.010 2^n@198- | 1.010 2^n@195- | 1.010 2^n@192-
+  p54-55   n=304 top: 1.122 prime^2@108- | 1.099 2*prime@191- | 1.092 2*prime@107-
+=== chain increments as 29-ary (Δc), sequence key mod 29 (mod 29) ===
+  p0-2     n=724 top: 1.070 phi(n)@194+ | 1.063 lucas@194- | 1.063 lucas@180-
+  p3-7     n=1138 top: 1.047 factorial@20- | 1.047 factorial@5+ | 1.047 factorial@27+
+  p8-14    n=1719 top: 1.040 factorial@7- | 1.039 factorial@9+ | 1.039 factorial@7+
+  p15-22   n=1892 top: 1.037 factorial@23- | 1.037 factorial@9+ | 1.037 factorial@9-
+  p23-26   n=1009 top: 1.036 2*prime@119- | 1.033 prime-1@138+ | 1.033 prime+1@138+
+  p27-32   n=1419 top: 1.043 factorial@27- | 1.043 factorial@26+ | 1.042 factorial@28+
+  p33-39   n=1667 top: 1.041 factorial@25- | 1.041 factorial@23+ | 1.041 factorial@6-
+  p40-53   n=2989 top: 1.040 factorial@16- | 1.040 factorial@12- | 1.040 factorial@9+
+  p54-55   n=304 top: 1.120 pi_digits@74- | 1.119 2*prime@78- | 1.118 factorial@21-
+=== raw ciphertext, sequence key mod 29 (community-style) (mod 29) ===
+  p0-2     n=729 top: 1.044 n^2@194- | 1.044 n^2@165- | 1.044 n^2@136-
+  p3-7     n=1145 top: 1.032 phi(n)@28+ | 1.027 pi_digits@43+ | 1.026 phi(n)@52-
+  p8-14    n=1729 top: 1.023 2*prime@131+ | 1.019 2*prime@132+ | 1.018 prime^2@181+
+  p15-22   n=1903 top: 1.018 prime^2@160+ | 1.014 prime_gap@70- | 1.014 pi_digits@194+
+  p23-26   n=1021 top: 1.036 pi_digits@85- | 1.034 prime_gap@150+ | 1.033 prime-1@66-
+  p27-32   n=1433 top: 1.025 prime-1@47+ | 1.025 prime+1@47+ | 1.025 prime@47+
+  p33-39   n=1680 top: 1.023 2*prime@66- | 1.020 prime-1@0- | 1.020 prime+1@0-
+  p40-53   n=3008 top: 1.011 tri@174+ | 1.011 tri@145+ | 1.011 tri@116+
+  p54-55   n=308 top: 1.085 2*prime@52+ | 1.084 pi_digits@64- | 1.083 n^3@171-
+=== atbash ciphertext, sequence key mod 29 (mod 29) ===
+  p0-2     n=729 top: 1.044 n^2@194+ | 1.044 n^2@165+ | 1.044 n^2@136+
+  p3-7     n=1145 top: 1.032 phi(n)@28- | 1.027 pi_digits@43- | 1.026 phi(n)@52+
+  p8-14    n=1729 top: 1.023 2*prime@131- | 1.019 2*prime@132- | 1.018 prime^2@181-
+  p15-22   n=1903 top: 1.018 prime^2@160- | 1.014 prime_gap@70+ | 1.014 pi_digits@194-
+  p23-26   n=1021 top: 1.036 pi_digits@85+ | 1.034 prime_gap@150- | 1.033 prime-1@66+
+  p27-32   n=1433 top: 1.025 prime-1@47- | 1.025 prime+1@47- | 1.025 prime@47-
+  p33-39   n=1680 top: 1.023 2*prime@66+ | 1.020 prime-1@0+ | 1.020 prime+1@0+
+  p40-53   n=3008 top: 1.011 tri@174- | 1.011 tri@145- | 1.011 tri@116-
+  p54-55   n=308 top: 1.085 2*prime@52- | 1.084 pi_digits@64+ | 1.083 n^3@171+
+=== chain increments, running key = LP solved plaintext mod 28 ===
+  p0-2     best ioc=1.095 off=2115 sign=1
+  p3-7     best ioc=1.090 off=965 sign=1
+  p8-14    best ioc=1.116 off=1265 sign=-1
+  p15-22   best ioc=1.075 off=2328 sign=1
+  p23-26   best ioc=1.097 off=330 sign=-1
+  p27-32   best ioc=1.092 off=117 sign=-1
+  p33-39   best ioc=1.096 off=266 sign=1
+  p40-53   best ioc=1.074 off=2560 sign=1
+  p54-55   best ioc=1.110 off=365 sign=1

@@ -1,0 +1,57 @@
+name: gate
+
+# The one claim this repository makes that a machine can check is that the toolkit
+# still reproduces every known Liber Primus solution from the community transcription.
+# That gate runs here on every push, after the sources are fetched fresh.
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - name: Install the pinned numeric stack
+        run: pip install numpy==2.5.2 scipy==1.18.1 sympy==1.14.0 mpmath==1.3.0 pillow==12.3.0
+      - name: No machine-local paths in a public repository
+        run: python check_paths.py --check
+      - name: Fetch the community transcriptions and n-gram tables
+        run: python setup_sources.py
+      - name: Build the dataset from the sources
+        run: python build_dataset.py
+        env:
+          PYTHONIOENCODING: utf-8
+      - name: Reproduce all nine known solutions
+        run: python verify_solved.py
+        env:
+          PYTHONIOENCODING: utf-8
+      - name: Both transcriptions agree on every unsolved rune
+        run: python crosscheck_transcription.py
+        env:
+          PYTHONIOENCODING: utf-8
+
+  gitleaks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GITLEAKS_VERSION: "8.30.1"
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Install gitleaks
+        run: |
+          curl -sSfL "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz" \
+            | sudo tar -xz -C /usr/local/bin gitleaks
+          gitleaks version
+      - run: gitleaks detect --source . --redact --exit-code 1 --log-opts=--all

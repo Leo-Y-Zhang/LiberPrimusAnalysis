@@ -1,0 +1,232 @@
+<title>Liber Primus Cryptanalysis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Runic&display=swap">
+<style>
+  :root {
+    --ground: #edefe9;
+    --paper: #f7f8f4;
+    --ink: #171a17;
+    --ink-2: #4d574b;
+    --rule: #c6ccbf;
+    --rule-soft: #dde2d7;
+    --rubric: #a4231d;
+    --rubric-soft: #f1dcd9;
+    --moss: #5d6b58;
+    --bar: #2b302b;
+    --bar-soft: #b9c0b3;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #141613; --paper: #1c1f1b; --ink: #e6e8e1; --ink-2: #a9b1a4; --rule: #3c423a; --rule-soft: #2c312a;
+      --rubric: #e25f56; --rubric-soft: #3d201e; --moss: #98a691; --bar: #d3d8cc; --bar-soft: #4a5146;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #141613; --paper: #1c1f1b; --ink: #e6e8e1; --ink-2: #a9b1a4; --rule: #3c423a; --rule-soft: #2c312a;
+    --rubric: #e25f56; --rubric-soft: #3d201e; --moss: #98a691; --bar: #d3d8cc; --bar-soft: #4a5146;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--ground); color: var(--ink);
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif; font-size: 17px; line-height: 1.55;
+  }
+  .page { max-width: 960px; margin: 0 auto; padding: 48px 28px 80px; }
+  header { border-bottom: 1px solid var(--rule); padding-bottom: 28px; margin-bottom: 40px; }
+  .eyebrow { font-family: "IBM Plex Mono", ui-monospace, Consolas, monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--moss); margin: 0 0 14px; }
+  h1 { font-family: "Cormorant Garamond", Garamond, "Times New Roman", serif; font-weight: 600; font-size: 54px; line-height: 1.02; margin: 0 0 18px; text-wrap: balance; letter-spacing: -0.005em; }
+  h2 { font-family: "Cormorant Garamond", Garamond, serif; font-weight: 600; font-size: 34px; line-height: 1.1; margin: 56px 0 14px; text-wrap: balance; }
+  h3 { font-family: "Cormorant Garamond", Garamond, serif; font-weight: 600; font-size: 24px; margin: 30px 0 8px; }
+  p { max-width: 68ch; margin: 0 0 16px; }
+  .lede { font-size: 20px; line-height: 1.45; max-width: 62ch; color: var(--ink); }
+  .runes { font-family: "Noto Sans Runic", "Segoe UI Historic", "Apple Symbols", "Junicode", serif; font-size: 1.05em; letter-spacing: 0.04em; }
+  .mono, code, td.num, th.num { font-family: "IBM Plex Mono", ui-monospace, Consolas, monospace; font-variant-numeric: tabular-nums; }
+  code { font-size: 0.88em; background: var(--paper); padding: 1px 5px; border-radius: 3px; }
+  .verdict { background: var(--paper); border-left: 4px solid var(--rubric); padding: 22px 26px; margin: 0 0 36px; }
+  .verdict p { margin-bottom: 10px; }
+  .verdict p:last-child { margin-bottom: 0; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 24px 0 28px; }
+  .stat { background: var(--paper); padding: 16px 18px; border-top: 1px solid var(--rule); }
+  .stat .k { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 30px; font-weight: 500; letter-spacing: -0.02em; line-height: 1.05; }
+  .stat .k.rub { color: var(--rubric); }
+  .stat .l { font-size: 13px; color: var(--ink-2); margin-top: 6px; line-height: 1.35; }
+  .tablewrap { overflow-x: auto; margin: 18px 0 26px; }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; }
+  th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--rule-soft); vertical-align: top; }
+  th { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--moss); font-weight: 500; border-bottom: 1px solid var(--rule); }
+  td.num, th.num { text-align: right; white-space: nowrap; }
+  tr.hit td { background: var(--rubric-soft); }
+  .fig { background: var(--paper); padding: 18px 18px 12px; margin: 20px 0 8px; border-top: 1px solid var(--rule); }
+  .fig svg { width: 100%; height: auto; display: block; }
+  .cap { font-size: 14px; color: var(--ink-2); max-width: 78ch; margin: 8px 0 26px; line-height: 1.45; }
+  .ledger td:first-child { font-weight: 600; }
+  .neg { color: var(--ink-2); }
+  .ok { color: var(--moss); font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 13px; }
+  ul { max-width: 70ch; padding-left: 22px; }
+  li { margin-bottom: 7px; }
+  .src { font-size: 14px; color: var(--ink-2); }
+  .src li { margin-bottom: 4px; word-break: break-word; }
+  a { color: var(--rubric); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:focus-visible { outline: 2px solid var(--rubric); outline-offset: 2px; }
+  hr { border: 0; border-top: 1px solid var(--rule); margin: 44px 0; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  @media (max-width: 700px) { .two { grid-template-columns: 1fr; } h1 { font-size: 40px; } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+
+<div class="page">
+<header>
+  <p class="eyebrow">Cicada 3301 · Liber Primus · session report, 6–7 September 2026</p>
+  <h1>The unsolved pages carry one fingerprint, and it rules out every public key</h1>
+  <p class="lede">All nine known solutions of the Liber Primus were reproduced from a verified transcription. The remaining 12,956 runes were then measured, modelled, and attacked with detectors whose power was proven on synthetic ciphertexts first. No page was decrypted. What did emerge is a precise statistical description of the cipher that is consistent with only one family of constructions, and which no key source in the public Cicada corpus satisfies.</p>
+</header>
+
+<div class="verdict">
+  <p><strong>Verdict.</strong> Not solved. The 2012 and 2013 puzzles and 19 of the 75 Liber Primus pages (all 17 of the first set, 2 of the second) were already solved by the community; every one of those solutions reproduces here. The 56 unsolved pages (nine sections in the verified transcription) behave as a chain cipher whose step between consecutive runes is a flat, aperiodic 28-symbol keystream. Without the source of that keystream, statistical cryptanalysis has nothing left to grip.</p>
+  <p><strong>What is new.</strong> The community's "86 doublets" clue is confirmed and sharpened: the step distribution is uniform except at zero, independent of the previous rune, and shows no periodicity, no cross-section reuse, and no match to any tested mathematical sequence, autokey, or running text, in either the raw or the chain form. Each negative comes with a positive control.</p>
+</div>
+
+<h2>What is already solved, reproduced</h2>
+<p>The toolkit's gate re-derives all nine solved sections from the runes before any attack runs. Two independent community transcriptions agree on every unsolved rune, so the ciphertext itself is not in doubt.</p>
+<div class="tablewrap"><table>
+<tr><th>Section</th><th>Method</th><th>Opening plaintext (Runeglish)</th></tr>
+<tr><td>Warning (01)</td><td>Atbash on the Gematria Primus</td><td>A WARNING. BELIEVE NOTHING FROM THIS BOOK…</td></tr>
+<tr><td>Welcome (03–04)</td><td>Vigenère, key <span class="mono">DIVINITY</span>, plaintext F passes through</td><td>WELCOME, PILGRIM, TO THE GREAT JOURNEY…</td></tr>
+<tr><td>Wisdom (05)</td><td>None</td><td>THE PRIMES ARE SACRED. THE TOTIENT FUNCTION IS SACRED.</td></tr>
+<tr><td>Koan (06–09)</td><td>Atbash, then shift +3</td><td>A KOAN. A MAN DECIDED TO GO AND STUDY WITH A MASTER.</td></tr>
+<tr><td>Loss of divinity (10–13)</td><td>None</td><td>THE CIRCUMFERENCE PRACTICES THREE BEHAVIORS…</td></tr>
+<tr><td>Koan (14–15)</td><td>Vigenère, key <span class="mono">FIRFUMFERENFE</span>, F interrupts</td><td>DURING A LESSON, THE MASTER EXPLAINED THE I.</td></tr>
+<tr><td>Instruction (16)</td><td>None</td><td>QUESTION ALL THINGS. DISCOVER TRUTH INSIDE YOURSELF.</td></tr>
+<tr><td>An end (56)</td><td>Shift down by φ(pₙ) = pₙ − 1, one F interrupt</td><td>WITHIN THE DEEP WEB THERE EXISTS A PAGE THAT HASHES TO…</td></tr>
+<tr><td>Parable (57)</td><td>None</td><td>LIKE THE INSTAR TUNNELING TO THE SURFACE…</td></tr>
+</table></div>
+<p>The alphabet is the 29-rune Gematria Primus, indices 0 to 28 in the order <span class="runes">ᚠᚢᚦᚩᚱᚳᚷᚹᚻᚾᛁᛄᛇᛈᛉᛋᛏᛒᛖᛗᛚᛝᛟᛞᚪᚫᚣᛡᛠ</span> (F U TH O R C G W H N I J EO P X S T B E M L NG OE D A AE Y IO EA), with prime values 2 through 109. All arithmetic below is on those indices modulo 29.</p>
+
+<h2>The unsolved corpus</h2>
+<div class="grid">
+  <div class="stat"><div class="k">12,956</div><div class="l">runes in nine unsolved sections (729 to 3,008 runes each), 2,921 words, separators and chapter marks intact</div></div>
+  <div class="stat"><div class="k">1.000</div><div class="l">index of coincidence, every section (random 1.00, English in runes 1.78)</div></div>
+  <div class="stat"><div class="k rub">86</div><div class="l">adjacent identical runes, where 447 are expected at random. Rate 0.66 % against 3.45 %, z = −17</div></div>
+  <div class="stat"><div class="k">none</div><div class="l">periodicity to 300 per section and 600 corpus-wide; no Kasiski signal; no shared keystream between sections</div></div>
+</div>
+<p>Apart from the doublets, the ciphertext is indistinguishable from a uniform random stream at every order tested: unigram, bigram (once the diagonal is removed), coincidence at lags 2 and 3, second differences, and the conditional table of each rune against its predecessor. That last table has a chi-square of 801 on 784 degrees of freedom once the diagonal is set aside, which is to say the step from one rune to the next carries no memory of the rune it started from.</p>
+
+<h2>The fingerprint</h2>
+<div class="fig">
+<svg viewBox="0 0 900 300" role="img" aria-label="Bar chart of the distribution of the step between consecutive runes, zero step depleted">
+  <line x1="60" y1="36" x2="880" y2="36" stroke="var(--rule)" stroke-dasharray="4 4"/>
+  <text x="62" y="30" font-family="IBM Plex Mono, monospace" font-size="12" fill="var(--ink-2)">uniform expectation, 447 per step</text>
+  <g font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--ink-2)">
+    <text x="20" y="260" text-anchor="end">0</text>
+    <text x="20" y="150" text-anchor="end">250</text>
+    <text x="20" y="40" text-anchor="end">500</text>
+  </g>
+  <line x1="28" y1="256" x2="880" y2="256" stroke="var(--rule)"/>
+  <g>
+    <rect x="34" y="218.2" width="22" height="37.8" fill="var(--rubric)"/>
+    <rect x="63" y="54.0" width="22" height="202.0" fill="var(--bar)"/>
+    <rect x="92" y="34.2" width="22" height="221.8" fill="var(--bar)"/>
+    <rect x="121" y="62.4" width="22" height="193.6" fill="var(--bar)"/>
+    <rect x="150" y="63.3" width="22" height="192.7" fill="var(--bar)"/>
+    <rect x="179" y="59.8" width="22" height="196.2" fill="var(--bar)"/>
+    <rect x="208" y="66.8" width="22" height="189.2" fill="var(--bar)"/>
+    <rect x="237" y="49.2" width="22" height="206.8" fill="var(--bar)"/>
+    <rect x="266" y="68.6" width="22" height="187.4" fill="var(--bar)"/>
+    <rect x="295" y="31.6" width="22" height="224.4" fill="var(--bar)"/>
+    <rect x="324" y="37.3" width="22" height="218.7" fill="var(--bar)"/>
+    <rect x="353" y="55.8" width="22" height="200.2" fill="var(--bar)"/>
+    <rect x="382" y="58.4" width="22" height="197.6" fill="var(--bar)"/>
+    <rect x="411" y="34.2" width="22" height="221.8" fill="var(--bar)"/>
+    <rect x="440" y="47.4" width="22" height="208.6" fill="var(--bar)"/>
+    <rect x="469" y="49.2" width="22" height="206.8" fill="var(--bar)"/>
+    <rect x="498" y="58.4" width="22" height="197.6" fill="var(--bar)"/>
+    <rect x="527" y="78.2" width="22" height="177.8" fill="var(--bar)"/>
+    <rect x="556" y="65.0" width="22" height="191.0" fill="var(--bar)"/>
+    <rect x="585" y="47.4" width="22" height="208.6" fill="var(--bar)"/>
+    <rect x="614" y="50.5" width="22" height="205.5" fill="var(--bar)"/>
+    <rect x="643" y="52.3" width="22" height="203.7" fill="var(--bar)"/>
+    <rect x="672" y="70.8" width="22" height="185.2" fill="var(--bar)"/>
+    <rect x="701" y="42.2" width="22" height="213.8" fill="var(--bar)"/>
+    <rect x="730" y="50.1" width="22" height="205.9" fill="var(--bar)"/>
+    <rect x="759" y="50.5" width="22" height="205.5" fill="var(--bar)"/>
+    <rect x="788" y="54.9" width="22" height="201.1" fill="var(--bar)"/>
+    <rect x="817" y="46.6" width="22" height="209.4" fill="var(--bar)"/>
+    <rect x="846" y="66.4" width="22" height="189.6" fill="var(--bar)"/>
+  </g>
+  <g font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--ink-2)">
+    <text x="45" y="276" text-anchor="middle" fill="var(--rubric)">0</text>
+    <text x="74" y="276" text-anchor="middle">1</text>
+    <text x="190" y="276" text-anchor="middle">5</text>
+    <text x="335" y="276" text-anchor="middle">10</text>
+    <text x="480" y="276" text-anchor="middle">15</text>
+    <text x="625" y="276" text-anchor="middle">20</text>
+    <text x="770" y="276" text-anchor="middle">25</text>
+    <text x="857" y="276" text-anchor="middle">28</text>
+    <text x="450" y="294" text-anchor="middle">step Δ = cᵢ − cᵢ₋₁ (mod 29), all 12,955 adjacent pairs</text>
+  </g>
+  <text x="45" y="210" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12" fill="var(--rubric)">86</text>
+</svg>
+</div>
+<p class="cap">The step between consecutive runes. Every non-zero step occurs about 447 times, as a uniform stream would give; the zero step occurs 86 times. The largest deviation among the 28 non-zero bars is z = +3.0, consistent with noise. The zero bar is at z = −17.</p>
+
+<p>This one deficit is the whole signal, and it is a demanding one. For any cipher of the form c<sub>i</sub> = p<sub>i</sub> + k<sub>i</sub> in which the key does not depend on the ciphertext, a doublet occurs whenever the plaintext difference cancels the key difference, and on English that happens about 3.4 % of the time no matter what the key is. The table below encrypts the 2,979 runes of known Liber Primus plaintext with each candidate family and records the doublet rate it produces.</p>
+
+<div class="tablewrap"><table>
+<tr><th>Cipher applied to the real solved plaintext</th><th class="num">Doublet rate</th><th>Matches 0.66 % ± 0.07 %?</th></tr>
+<tr><td>Vigenère, random key of length 8 / 13 / 29</td><td class="num">3.3 / 2.1 / 3.8 %</td><td class="neg">no</td></tr>
+<tr><td>Stream keys: φ(pₙ), pₙ, pₙ², Fibonacci, n, n²</td><td class="num">3.5 – 4.1 %</td><td class="neg">no</td></tr>
+<tr><td>Any of the above with F interrupts (as on the solved pages)</td><td class="num">3.2 – 4.1 %</td><td class="neg">no</td></tr>
+<tr><td>Running key from English text, Vigenère or Beaufort</td><td class="num">3.9 / 3.7 %</td><td class="neg">no</td></tr>
+<tr><td>Plaintext autokey (lag 1, lag 5); plaintext differences</td><td class="num">5.4 / 4.1 / 3.7 %</td><td class="neg">no</td></tr>
+<tr><td>Ciphertext autokey c = p + c<sub>prev</sub></td><td class="num">1.6 % (= frequency of F)</td><td class="neg">no, and its step stream is English (IoC 1.76)</td></tr>
+<tr><td>One-time pad</td><td class="num">3.3 %</td><td class="neg">no</td></tr>
+<tr><td>Vigenère with key advanced whenever the output would repeat</td><td class="num">0.4 – 0.7 %</td><td>yes, but its period signature is absent (below)</td></tr>
+<tr class="hit"><td>Chain cipher c<sub>i</sub> = c<sub>i−1</sub> + s<sub>i</sub>, s<sub>i</sub> ∈ {1…28}, zero step for one rare letter</td><td class="num">0.67 %</td><td>yes</td></tr>
+</table></div>
+
+<p>The chain family is the only one that reproduces the deficit, and the rest of the statistics pin it down further. The step stream is flat and memoryless, so the steps are keyed rather than a fixed function of the plaintext (a fixed function would make the step stream as English as the text). The step stream shows no period to 300 per section, so the key is aperiodic or longer than the sections. And the zero step occurs at 0.66 %, which happens to equal the frequency of the rune <span class="runes">ᛠ</span> (EA, the 29th and last rune) in the solved plaintext; the natural reading is a 28-symbol keyed step alphabet with EA as a full turn of the wheel, though the word-position statistics of the 86 doublets do not match EA's usage in English, so that reading remains a conjecture rather than a result.</p>
+
+<h2>Exclusion ledger</h2>
+<p>Each row is a family that was attacked, the detector used, the proof that the detector has power, and the outcome on the real text. A negative without a positive control is not listed.</p>
+<div class="tablewrap"><table class="ledger">
+<tr><th>Family</th><th>Detector and coverage</th><th>Positive control</th><th>Result on the unsolved sections</th></tr>
+<tr><td>Monoalphabetic, transposition</td><td>Unigram distribution</td><td class="ok">IoC 1.78 on plaintext</td><td>Flat (IoC 1.000). Excluded.</td></tr>
+<tr><td>Word-level Caesar or affine</td><td>Difference-tuple dictionary lookup, lengths 4–8</td><td class="ok">100 % hit on plaintext words</td><td>Hit rate equals the random baseline. Excluded.</td></tr>
+<tr><td>Periodic Vigenère / Beaufort, with or without F interrupts or key-skipping</td><td>Periodic IoC 1–300 per section, 1–600 corpus; coincidence at lags 1–300 (survives interrupts and skips)</td><td class="ok">period 13 at n = 3000: z 8.5 plain, 6.4 with interrupts, 5.5 with skips</td><td>Best lag per section z 2.5–3.8; random text gives 3.1 ± 0.5. The one candidate (p0-2, lag 35) has no harmonics. Excluded for periods ≤ 300 in large sections, ≤ 400 corpus-wide.</td></tr>
+<tr><td>Digraphic / block ciphers (Playfair-type)</td><td>Parity of doublet positions mod 2–8 (section and sentence aligned)</td><td class="ok">by construction</td><td>Uniform; within-word skew matches word lengths. Excluded.</td></tr>
+<tr><td>Mathematical-sequence keys, raw form (mod 29)</td><td>24 sequences × 200 offsets × 2 signs on raw and Atbash text</td><td class="ok">stream detection IoC 1.7</td><td>Max IoC 1.03–1.12 (n-dependent noise). Excluded.</td></tr>
+<tr><td>Mathematical-sequence keys, chain form (mod 28)</td><td>22 sequences × 300 offsets × 2 signs × 14 step-alphabet bijections (including discrete logs to all 12 primitive roots) × 2 doublet conventions</td><td class="ok">synthetic chain cipher recovered, IoC 1.66</td><td>Max IoC 1.08–1.15. Excluded.</td></tr>
+<tr><td>Autokeys inside the chain (ciphertext lags 1–60, plaintext lags 1–3 with all 28<sup>L</sup> seeds, multiplicative)</td><td>IoC of decrypted step stream</td><td class="ok">plaintext autokey seed recovered, IoC 1.67</td><td>1.01–1.15. Excluded.</td></tr>
+<tr><td>Prime-value feedback (shift by the Gematria prime of the previous rune, six variants)</td><td>IoC of output, all seeds</td><td class="ok">Δc test exposes ciphertext autokey (1.76)</td><td>0.97–1.06. Excluded.</td></tr>
+<tr><td>Running key from Cicada-linked texts (solved Liber Primus text, its Atbash and ciphertext, Emerson's Self-Reliance, the Mabinogion, War and Peace as a control text), raw and chain form</td><td>IoC of c − K, K − c, c + K at every offset, 400-rune windows</td><td class="ok">known offset found at z = 34</td><td>Max 1.13–1.14; random text against the same keys also reaches 1.128. Excluded.</td></tr>
+<tr><td>Shared keystream between sections (or with itself at a shift)</td><td>IoC of rune differences at every relative shift, overlap ≥ 300</td><td class="ok">z 7.8 at overlap 1200</td><td>Max z 3.3, all at the shortest overlaps. Excluded for overlaps ≥ 600.</td></tr>
+<tr><td>Progressive key (k<sub>i</sub> = a + δ·i)</td><td>Requires an English letter-difference rarer than 0.66 %</td><td class="ok">measured on two corpora</td><td>Rarest difference is 1.3 %. Excluded.</td></tr>
+</table></div>
+
+<h2>Two smaller findings</h2>
+<div class="two">
+<div>
+<h3>The doublets are on the page</h3>
+<p>Every doublet site was located to page and line and cropped from the original images. In the samples inspected (<span class="runes">ᚦ·ᚦ</span> across a word gap on page 0, <span class="runes">ᛠᛠ</span> on page 1, <span class="runes">ᚠᚠ</span> on page 9) both runes are ordinary, identical glyphs with no rubrication, dots, or size change. The anomaly is in the cipher, not in the transcription.</p>
+</div>
+<div>
+<h3>The words are long for English</h3>
+<p>Mean cipher word length is 4.47 runes against 4.03 for the solved pages and 4.12 for English prose in runes; two-rune words are 15.5 % of the text where English gives 22 to 24 %. Either the plaintext is in a different register or language, or the separators are not plain word boundaries.</p>
+</div>
+</div>
+
+<h2>What would be needed</h2>
+<p>A flat, aperiodic keystream is exactly what a running key from an unavailable text, a pseudo-random generator, or a hash-derived pad looks like. Cicada's own pointers fit that reading: the solved page 56 sends every pilgrim to a deep-web page identified only by a SHA-512 hash that has never been found, and the 2016 signed message says the book's "numbers are the direction". The tests above make it unlikely that the key is any published integer sequence or any text in the public archive, applied in any of the simple ways Cicada used on the solved pages. Solving the remaining pages therefore looks like a search for the key source rather than a cryptanalytic problem, and the community's decade of work points the same way.</p>
+<p>Three threads remain open and cheap to pursue if new material appears: the outguess payloads of the page images (reported as 58 kB of noise, never verified here for lack of the tool), the unfound page behind the page-56 hash, and a physical re-examination of the doublet sites on the print edition.</p>
+
+<h2>Toolkit and files</h2>
+<p>Everything is reproducible from one directory: <code>lp.py</code> (Gematria Primus, ciphers with the community's interrupt convention, statistics, an n-gram language model trained on English in runes), <code>dataset.json</code> (all 18 sections with words, segments and known plaintexts), <code>verify_solved.py</code> (the gate), <code>characterize.py</code>, <code>fingerprint.py</code>, <code>controls.py</code>, the numbered test scripts, <code>crop_doublets.py</code>, and <code>FINDINGS.md</code> with every number quoted here. Run Python with <code>PYTHONIOENCODING=utf-8</code>.</p>
+
+<h2>Sources</h2>
+<ul class="src">
+<li>Verified transcriptions and page images: relikd/LiberPrayground (GitHub); independent transcription: cicada-solvers/cicada-library (GitHub).</li>
+<li>Puzzle history and solved-page methods: scream314/cicada3301 (GitHub); 2012–2017 archive: krisyotam/cicada3301 (GitHub).</li>
+<li>Community statistics: Uncovering Cicada Wiki, "Frequency Analysis Unsolved Pages" and "Liber Primus Ideas and Suggestions" (report the same 86 doublets as "so far the only solid clue").</li>
+<li>Cryptanalysis briefing: cicadasolvers.com/quickstart (DJUBEI dis legomenon, n-gram counts, prime–Fibonacci observations).</li>
+<li>2016 signed message via infotomb 4gq25.jpg; 2017 signed message (pastebin yEiTHhvF); PGP key 7A35090F.</li>
+</ul>
+</div>

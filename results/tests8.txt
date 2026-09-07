@@ -1,0 +1,13 @@
+skip britannica [Errno 2] No such file or directory: '../krisyotam_cicada3301/archives/cijhho/2012/additional docs/the unsolved book code/Encyclopaedia Britannica, 11th Edition - the book from the book code.txt'
+{'mabinogion': 3324, 'selfreliance:Self-Reliance - Wiki': 130433, 'selfreliance:Self-Reliance and Ot': 25721, 'war_and_peace': 200000}
+p0-2     best ioc=1.139 ('war_and_peace', 89047, -1, 'chain')
+p3-7     best ioc=1.137 ('war_and_peace', 176629, -1, 'chain')
+p8-14    best ioc=1.135 ('selfreliance:Self-Reliance - Wiki', 100585, -1, 'chain')
+p15-22   best ioc=1.131 ('selfreliance:Self-Reliance - Wiki', 57599, -1, 'chain')
+p23-26   best ioc=1.139 ('war_and_peace', 176625, -1, 'raw')
+p27-32   best ioc=1.137 ('selfreliance:Self-Reliance and Ot', 18759, -1, 'raw')
+p33-39   best ioc=1.128 ('selfreliance:Self-Reliance - Wiki', 119904, 1, 'chain')
+p40-53   best ioc=1.131 ('war_and_peace', 54568, -1, 'raw')
+Traceback (most recent call last):
+  File "<stdin>", line 34, in <module>
+IndexError: boolean index did not match indexed array along axis 0; size of axis is 400 but size of corresponding boolean axis is 307

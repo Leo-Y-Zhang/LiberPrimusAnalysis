@@ -1,0 +1,169 @@
+REFERENCE (solved plaintext): ioc=1.780 doublet_rate=0.0259  n=2979
+ALL CIPHER: ioc=1.000 doublet_rate=0.0066 n=12956  expected random doublet rate=0.0345
+
+== p0-2  n=729 words=158
+   ioc=0.988 chi2(uniform,df28)=19.6 doublets=4 (random exp 25.1; english-rate exp 18.8) within-word dbl=2 (exp 19.7)
+   top periodic IoC: 109:1.21 83:1.14 99:1.13 63:1.09 57:1.09 35:1.08 72:1.07 120:1.07
+   kasiski 4-gram repeats=0 top=[]
+   kasiski factors: []
+   autocorr top: 35:0.061 60:0.052 57:0.052 22:0.051 7:0.048 12:0.046
+   least/most frequent: [('EO', 17), ('M', 18), ('A', 19), ('O', 20)] [('F', 34), ('D', 31), ('TH', 30), ('H', 30)]
+   segments: [(13, 0.74, 0), (716, 0.99, 4)]
+== p3-7  n=1145 words=256
+   ioc=1.004 chi2(uniform,df28)=33.0 doublets=6 (random exp 39.4; english-rate exp 29.6) within-word dbl=4 (exp 30.7)
+   top periodic IoC: 115:1.11 46:1.09 23:1.09 76:1.08 92:1.08 31:1.07 61:1.07 79:1.07
+   kasiski 4-gram repeats=1 top=[('NGCHOE', [1028, 1107])]
+   kasiski factors: [(79, 1)]
+   autocorr top: 29:0.045 23:0.044 58:0.041 9:0.041 31:0.041 55:0.041
+   least/most frequent: [('F', 26), ('O', 30), ('W', 30), ('B', 31)] [('C', 52), ('L', 50), ('EA', 50), ('EO', 49)]
+   segments: [(16, 1.21, 0), (103, 1.03, 1), (3, 0.0, 0), (690, 1.0, 4), (11, 1.05, 0), (308, 1.0, 1), (14, 0.32, 0)]
+== p8-14  n=1729 words=383
+   ioc=0.999 chi2(uniform,df28)=26.9 doublets=9 (random exp 59.6; english-rate exp 44.7) within-word dbl=7 (exp 46.4)
+   top periodic IoC: 61:1.11 103:1.10 120:1.08 96:1.08 98:1.07 68:1.07 109:1.07 24:1.06
+   kasiski 4-gram repeats=1 top=[('POTHX', [66, 279])]
+   kasiski factors: [(3, 1), (71, 1)]
+   autocorr top: 24:0.043 14:0.041 33:0.041 25:0.040 48:0.040 44:0.040
+   least/most frequent: [('J', 44), ('R', 50), ('I', 50), ('D', 51)] [('X', 78), ('U', 69), ('TH', 69), ('N', 69)]
+   segments: [(1729, 1.0, 9)]
+== p15-22  n=1903 words=438
+   ioc=1.001 chi2(uniform,df28)=29.1 doublets=10 (random exp 65.6; english-rate exp 49.2) within-word dbl=10 (exp 50.5)
+   top periodic IoC: 75:1.11 120:1.10 60:1.10 91:1.09 90:1.07 99:1.06 80:1.06 40:1.06
+   kasiski 4-gram repeats=3 top=[('EOPXY', [32, 1236]), ('SUIOH', [234, 775]), ('EOXCEA', [763, 1259])]
+   kasiski factors: [(2, 2), (4, 2), (7, 1), (14, 1), (28, 1), (43, 1), (8, 1), (16, 1)]
+   autocorr top: 5:0.045 51:0.043 25:0.043 41:0.041 26:0.041 24:0.041
+   least/most frequent: [('W', 50), ('H', 52), ('EO', 52), ('E', 54)] [('IO', 77), ('J', 76), ('TH', 75), ('O', 75)]
+   segments: [(9, 0.81, 0), (11, 1.58, 0), (1883, 1.0, 10)]
+== p23-26  n=1021 words=224
+   ioc=0.994 chi2(uniform,df28)=21.8 doublets=11 (random exp 35.2; english-rate exp 26.4) within-word dbl=9 (exp 27.5)
+   top periodic IoC: 87:1.17 109:1.16 65:1.11 114:1.10 99:1.10 92:1.09 48:1.09 102:1.09
+   kasiski 4-gram repeats=0 top=[]
+   kasiski factors: []
+   autocorr top: 38:0.049 52:0.049 27:0.042 19:0.042 37:0.042 17:0.041
+   least/most frequent: [('EO', 21), ('D', 25), ('J', 27), ('C', 30)] [('U', 44), ('S', 43), ('E', 42), ('A', 41)]
+   segments: [(16, 1.21, 0), (1005, 0.99, 11)]
+== p27-32  n=1433 words=326
+   ioc=0.991 chi2(uniform,df28)=15.7 doublets=13 (random exp 49.4; english-rate exp 37.0) within-word dbl=8 (exp 38.2)
+   top periodic IoC: 120:1.09 60:1.09 69:1.08 90:1.08 92:1.07 117:1.07 30:1.05 98:1.05
+   kasiski 4-gram repeats=0 top=[]
+   kasiski factors: []
+   autocorr top: 58:0.044 12:0.042 24:0.041 18:0.041 31:0.041 2:0.040
+   least/most frequent: [('C', 39), ('N', 41), ('U', 42), ('G', 43)] [('B', 63), ('D', 57), ('R', 55), ('I', 55)]
+   segments: [(19, 1.53, 1), (1414, 0.99, 12)]
+== p33-39  n=1680 words=379
+   ioc=0.996 chi2(uniform,df28)=22.0 doublets=12 (random exp 57.9; english-rate exp 43.4) within-word dbl=8 (exp 44.9)
+   top periodic IoC: 73:1.09 83:1.07 88:1.07 96:1.07 71:1.07 54:1.06 105:1.06 90:1.05
+   kasiski 4-gram repeats=2 top=[('XNUX', [285, 987]), ('STBG', [323, 1153])]
+   kasiski factors: [(2, 2), (3, 1), (6, 1), (9, 1), (13, 1), (18, 1), (26, 1), (27, 1)]
+   autocorr top: 6:0.048 29:0.048 50:0.042 18:0.042 10:0.042 53:0.042
+   least/most frequent: [('F', 40), ('O', 49), ('EO', 49), ('E', 50)] [('A', 71), ('I', 69), ('U', 67), ('OE', 66)]
+   segments: [(10, 0.0, 0), (81, 0.96, 0), (8, 1.04, 0), (746, 0.98, 10), (553, 0.99, 1), (161, 1.04, 0), (3, 0.0, 0), (118, 1.05, 1)]
+== p40-53  n=3008 words=670
+   ioc=1.002 chi2(uniform,df28)=33.2 doublets=18 (random exp 103.7; english-rate exp 77.7) within-word dbl=14 (exp 80.6)
+   top periodic IoC: 110:1.07 96:1.06 90:1.05 119:1.05 101:1.05 116:1.04 57:1.04 95:1.03
+   kasiski 4-gram repeats=11 top=[('EBUTH', [40, 823]), ('THFOEG', [43, 460]), ('EAPLD', [75, 2593]), ('TAJC', [106, 2266])]
+   kasiski factors: [(3, 4), (5, 4), (2, 3), (9, 2), (27, 2), (10, 2), (29, 1), (4, 1)]
+   autocorr top: 58:0.040 56:0.040 40:0.039 16:0.039 3:0.038 51:0.038
+   least/most frequent: [('G', 83), ('C', 85), ('W', 85), ('H', 91)] [('F', 125), ('O', 121), ('OE', 121), ('J', 120)]
+   segments: [(2474, 1.0, 16), (534, 0.97, 2)]
+== p54-55  n=308 words=66
+   ioc=0.981 chi2(uniform,df28)=22.1 doublets=3 (random exp 10.6; english-rate exp 7.9) within-word dbl=1 (exp 8.3)
+   top periodic IoC: 45:1.37 70:1.31 60:1.27 62:1.26 26:1.21 35:1.19 28:1.17 64:1.16
+   kasiski 4-gram repeats=0 top=[]
+   kasiski factors: []
+   autocorr top: 45:0.065 17:0.058 19:0.055 52:0.055 48:0.050 59:0.048
+   least/most frequent: [('N', 4), ('F', 6), ('AE', 6), ('L', 7)] [('M', 18), ('E', 15), ('C', 14), ('G', 14)]
+   segments: [(9, 0.81, 0), (299, 0.97, 3)]
+
+CROSS-SECTION kappa (aligned from start; independent ~0.0345) and diff-IoC (independent ~1.0):
+   p0-2     p3-7     kappa=0.0316 diffioc=1.010
+   p0-2     p8-14    kappa=0.0274 diffioc=1.004
+   p0-2     p15-22   kappa=0.0274 diffioc=1.001
+   p0-2     p23-26   kappa=0.0316 diffioc=0.999
+   p0-2     p27-32   kappa=0.0466 diffioc=1.006
+   p0-2     p33-39   kappa=0.0425 diffioc=0.997
+   p0-2     p40-53   kappa=0.0316 diffioc=1.009
+   p0-2     p54-55   kappa=0.0357 diffioc=1.018
+   p3-7     p8-14    kappa=0.0376 diffioc=0.998
+   p3-7     p15-22   kappa=0.0314 diffioc=1.002
+   p3-7     p23-26   kappa=0.0274 diffioc=1.000
+   p3-7     p27-32   kappa=0.0288 diffioc=0.997
+   p3-7     p33-39   kappa=0.0358 diffioc=1.014
+   p3-7     p40-53   kappa=0.0245 diffioc=1.007
+   p3-7     p54-55   kappa=0.0292 diffioc=1.014
+   p8-14    p15-22   kappa=0.0405 diffioc=1.001
+   p8-14    p23-26   kappa=0.0274 diffioc=0.998
+   p8-14    p27-32   kappa=0.0286 diffioc=0.994
+   p8-14    p33-39   kappa=0.0298 diffioc=0.993
+   p8-14    p40-53   kappa=0.0278 diffioc=0.994
+   p8-14    p54-55   kappa=0.0260 diffioc=0.983
+   p15-22   p23-26   kappa=0.0392 diffioc=0.996
+   p15-22   p27-32   kappa=0.0391 diffioc=0.998
+   p15-22   p33-39   kappa=0.0304 diffioc=0.996
+   p15-22   p40-53   kappa=0.0268 diffioc=1.013
+   p15-22   p54-55   kappa=0.0390 diffioc=1.004
+   p23-26   p27-32   kappa=0.0343 diffioc=0.997
+   p23-26   p33-39   kappa=0.0225 diffioc=1.006
+   p23-26   p40-53   kappa=0.0451 diffioc=0.990
+   p23-26   p54-55   kappa=0.0390 diffioc=1.020
+   p27-32   p33-39   kappa=0.0349 diffioc=0.993
+   p27-32   p40-53   kappa=0.0370 diffioc=0.998
+   p27-32   p54-55   kappa=0.0487 diffioc=0.969
+   p33-39   p40-53   kappa=0.0310 diffioc=1.012
+   p33-39   p54-55   kappa=0.0162 diffioc=1.011
+   p40-53   p54-55   kappa=0.0390 diffioc=1.007
+
+Whole-corpus autocorrelation peaks (lags 1..400):
+    99:0.0398 333:0.0389 270:0.0383 381:0.0383 387:0.0380 179:0.0379 187:0.0378 47:0.0377 304:0.0377 91:0.0377 246:0.0376 129:0.0376 232:0.0376 388:0.0376 210:0.0375
+
+corpus repeated 5-grams: 6 -> [('BMRNM', [5448, 12001]), ('DJUBE', [6555, 12950]), ('JUBEI', [6556, 12951]), ('OUNWM', [6985, 8016]), ('OFLOENG', [7393, 12385]), ('IMNGYA', [10671, 12764])]
+corpus repeated 6-grams: 1 -> [('DJUBEI', [6555, 12950])]
+corpus repeated 7-grams: 0 -> []
+repeated cipher words (len>=3): [('EAREO', 3), ('GITH', 2), ('EODEO', 2), ('BMNG', 2), ('LTI', 2), ('IOCX', 2), ('SEO', 2), ('UNGO', 2), ('IAEOE', 2), ('IOEO', 2), ('DJU', 2), ('BEI', 2), ('UGEA', 2), ('OOEO', 2), ('YLO', 2)]
+
+wordlen  cipher%%  plain%%
+   1      3.0      3.8
+   2     15.5     24.1
+   3     24.8     23.6
+   4     17.6     17.7
+   5     10.9      7.7
+   6      8.8      8.8
+   7      7.4      6.4
+   8      5.4      3.4
+   9      2.7      2.2
+  10      1.8      1.2
+  11      1.1      0.5
+  12      0.6      0.3
+  13      0.1      0.3
+  14      0.1      0.1
+  15      0.0      0.0
+
+unigram cipher vs plain (sorted by plain freq):
+  E   plain 0.128  cipher 0.034
+  O   plain 0.086  cipher 0.035
+  A   plain 0.073  cipher 0.037
+  S   plain 0.067  cipher 0.033
+  T   plain 0.066  cipher 0.034
+  R   plain 0.064  cipher 0.033
+  I   plain 0.062  cipher 0.036
+  N   plain 0.061  cipher 0.034
+  U   plain 0.051  cipher 0.035
+  D   plain 0.039  cipher 0.034
+  TH  plain 0.039  cipher 0.035
+  L   plain 0.037  cipher 0.036
+  W   plain 0.033  cipher 0.031
+  C   plain 0.031  cipher 0.034
+  H   plain 0.030  cipher 0.032
+  Y   plain 0.027  cipher 0.035
+  M   plain 0.026  cipher 0.034
+  F   plain 0.016  cipher 0.035
+  P   plain 0.014  cipher 0.034
+  B   plain 0.013  cipher 0.034
+  G   plain 0.013  cipher 0.034
+  NG  plain 0.010  cipher 0.035
+  EA  plain 0.007  cipher 0.036
+  IO  plain 0.005  cipher 0.036
+  X   plain 0.002  cipher 0.035
+  J   plain 0.001  cipher 0.035
+  AE  plain 0.001  cipher 0.034
+
+wrote stats.json

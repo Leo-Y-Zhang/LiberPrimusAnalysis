@@ -1,0 +1,28 @@
+(a) best lags by z per section (lags 1..min(300, n/3))
+  p0-2     n=729 35:z3.8 60:z2.5 57:z2.5 22:z2.4 221:z2.1
+  p3-7     n=1145 279:z3.6 241:z2.7 239:z2.7 230:z2.3 127:z2.2
+  p8-14    n=1729 103:z2.7 148:z2.7 123:z2.5 183:z2.2 179:z2.0
+  p15-22   n=1903 5:z2.6 270:z2.4 141:z2.3 178:z2.2 75:z2.2
+  p23-26   n=1021 38:z2.5 52:z2.4 221:z2.2 267:z2.2 159:z2.1
+  p27-32   n=1433 270:z2.4 148:z2.2 96:z2.2 277:z2.1 208:z2.0
+  p33-39   n=1680 6:z3.1 29:z3.0 105:z2.9 99:z2.7 135:z2.3
+  p40-53   n=3008 84:z2.7 258:z2.6 88:z2.6 111:z2.5 138:z2.4
+  p54-55   n=308 45:z2.7 97:z2.5 17:z2.2 85:z1.9 19:z1.9
+  null: best-lag z for random 729-rune text: mean 3.02 sd 0.46
+  p0-2 harmonics of 35: 35:z3.8 70:z-0.2 105:z1.0 140:z0.4
+(b) doublet position parity
+  doublets: 86
+  mod 2 section  counts=[48, 38] chi2=1.2 (df 1)
+  mod 2 sentence counts=[39, 47] chi2=0.7 (df 1)
+  mod 3 section  counts=[30, 26, 30] chi2=0.4 (df 2)
+  mod 3 sentence counts=[26, 23, 37] chi2=3.8 (df 2)
+  mod 4 section  counts=[21, 19, 27, 19] chi2=2.0 (df 3)
+  mod 4 sentence counts=[21, 24, 18, 23] chi2=1.0 (df 3)
+  mod 5 section  counts=[16, 18, 19, 13, 20] chi2=1.8 (df 4)
+  mod 5 sentence counts=[13, 17, 16, 25, 15] chi2=4.9 (df 4)
+  mod 6 section  counts=[17, 13, 18, 13, 13, 12] chi2=2.2 (df 5)
+  mod 6 sentence counts=[11, 12, 17, 15, 11, 20] chi2=4.7 (df 5)
+  mod 7 section  counts=[7, 10, 12, 10, 15, 18, 14] chi2=6.6 (df 6)
+  mod 7 sentence counts=[10, 14, 16, 7, 18, 8, 13] chi2=8.3 (df 6)
+  mod 8 section  counts=[10, 10, 13, 9, 11, 9, 14, 10] chi2=2.2 (df 7)
+  mod 8 sentence counts=[11, 12, 12, 9, 10, 12, 6, 14] chi2=3.9 (df 7)

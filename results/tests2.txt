@@ -1,0 +1,113 @@
+T1: word-level Caesar (difference-tuple) test
+  len 4: cipher words  511  caesar-hit 0.323  reversed 0.307  affine 1.000 | random 0.314 / affine 0.993 | LP-plain 1.000
+  len 5: cipher words  317  caesar-hit 0.038  reversed 0.028  affine 0.524 | random 0.022 / affine 0.537 | LP-plain 1.000
+  len 6: cipher words  256  caesar-hit 0.000  reversed 0.000  affine 0.051 | random 0.002 / affine 0.046 | LP-plain 0.969
+  len 7: cipher words  216  caesar-hit 0.000  reversed 0.000  affine 0.005 | random 0.000 / affine 0.001 | LP-plain 0.979
+  len 8: cipher words  156  caesar-hit 0.000  reversed 0.000  affine 0.000 | random 0.000 / affine 0.001 | LP-plain 1.000
+
+T2: doublet anatomy (rune, count) and context
+  doubled runes: [('AE', 7), ('X', 6), ('W', 6), ('G', 5), ('TH', 4), ('J', 4), ('N', 4), ('OE', 4), ('F', 4), ('O', 4), ('E', 4), ('EA', 3), ('L', 3), ('S', 3), ('NG', 2), ('Y', 2), ('U', 2), ('IO', 2), ('M', 2), ('H', 2), ('D', 2), ('R', 2), ('EO', 2), ('T', 2), ('I', 2), ('C', 1), ('A', 1), ('P', 1)]
+  expected if random (freq^2 * pairs): [('AE', 15.3), ('X', 16.2), ('W', 12.4), ('G', 14.8), ('TH', 16.0), ('J', 15.6), ('N', 15.4), ('OE', 18.7), ('F', 16.2), ('O', 16.2), ('E', 14.9), ('EA', 16.3), ('L', 16.3), ('S', 14.5), ('NG', 15.9), ('Y', 15.5), ('U', 15.6), ('IO', 17.1), ('M', 14.7), ('H', 13.2), ('D', 14.9), ('R', 13.9), ('EO', 12.3), ('T', 15.1), ('I', 17.1), ('C', 15.1), ('A', 17.9), ('P', 15.3)]
+  position-in-word of 2nd rune of doublet: [(0, 23), (2, 21), (1, 12), (4, 8), (3, 7), (5, 6), (6, 5), (8, 2), (11, 1), (7, 1)]
+  sample: [('p0-2', 122, 'TH', 'boundary', 0), ('p0-2', 207, 'X', 'within', 4), ('p0-2', 456, 'EA', 'within', 6), ('p0-2', 653, 'J', 'boundary', 0), ('p3-7', 53, 'L', 'within', 2), ('p3-7', 180, 'AE', 'within', 2), ('p3-7', 203, 'S', 'within', 5), ('p3-7', 250, 'NG', 'boundary', 0), ('p3-7', 309, 'G', 'boundary', 0), ('p3-7', 862, 'AE', 'within', 1), ('p8-14', 107, 'N', 'within', 3), ('p8-14', 142, 'OE', 'within', 2)]
+
+T3: title segments (before first chapter mark) of unsolved sections
+  p0-2     SHEOGMIOF SYENGC  lens=[8, 5]  ᛋᚻᛖᚩᚷᛗᛡᚠ ᛋᚣᛖᛝᚳ
+  p3-7     LJ EOHNGCTHTAEJTXH TUOE  lens=[2, 11, 3]  ᛚᛄ ᛇᚻᛝᚳᚦᛏᚫᛄᛏᛉᚻ ᛏᚢᛟ
+  p8-14    XIXM UXMCTHPOB IONT EAX PRY OCEAMNGGXLU NGITO JFNG SLND.OM EOAE RDWTJTH YTHS AEYESXOEB EAREO PNGUP OTHX AHOERNGUER YLXL IOLR PWEON EAARXNG YSHUL SY GNU EOAENN OAEED AOJIOUAX RXIOOEJ MIEOLEAHTHMEAY.GBCPXC NOEOESGMPETLNJ JCNGO IWLEAB FAE TNG NPEAOTTH HNGXPHPCPRU LFEOE GABFIAEFUOE MFYNGJC HTFLAE ETHSLOU AEOAMOEUWEO.BNSLNGJOEN MLB OET NDBONTHIOHOE RPNFPD SOIEAYN EOYWAEGJ NGMAWP AUN PIOMEDOE.I XIOM FPO THXD OD SPXIOG OEHFTHXJOESTHYTH THSY HEAGLAERT USOE THFFYOEIO EOCYBLNG EARHD JYTAE HDCS XFD THM CEONG AENIOEAWIIO BMNG GPIC EALGXYYRJ XIJU EY ANGP IOAEC EEAWBTHOEFM AERFOT NGXD MEIO OPS EOD EOOEAEN GMYIAEIJ PJOIOG PCJ LEIOHLGREO OEY EAYMWNW FIJUMAENCMEAI.OEO BLD NWFNBR SOETHIO AIOTGGW ASIOTHSTHSFMGDEA NGPOAYNGPS OENEOAE HUG O UTHT BGYNGFYIH WIOEARAEWIODATHC XU PTSUE GTHIOL ESEANGXPX NOE DOEB NWUIEOLD I THYG OEPIO EA.FSXD EGTHEA NS DOEME MNX WBEAPOE MXAE JODHIOGF YM IGXHW N SMGEA YLRJMXY EORUOE YTHUOEO RUW IBC.EATD LESJ COE GDIO UWNGHAEUP TPOY NEOTHOETEOCF BAN MTHNG OEEAUIA NHNGXO EOIIOFOEBTHF SB FDEO OTHT 7 G LJEAE.YIAEWH AET.IX XHDOEA AESNGLNG EOHMOOEBTH RLS CH AIONEORXTH YXH IONU MXW EPE OCPCDAXUMNGOE SNOEX FRCBUJRAENG BSOEEAIOAL TOENAEOEA I IOSCE WB.NLNG THNIEA BIORFEIW NFMUGN JLCR.NGYXSAOERXC BAE FUAEAW LN JX HTHX MLNE TNGTHAOUMY FNGA HIOEOIO LTI EOI CUUE CB AEEOFTHCLOXLOL FCEA AFOEAEF NC UBR NEOOX ICOE DXEANGFRIOCEO XOEPMDCTHWP.IOH NTHEOTWEU AEEOTH NGOETCGBEA ACBAOWAE XU AEEB.EOTUO OEDFUS.IOJMTHEATA BWY TJHTHAE LARAEOETHONOEIE IOFG SFTHT EAIOEAIUIOEONGD XTFBHUSCREOW EOPSULAPUCEFDX THEAEONGH YRM OENL,  PWDRJ ANGD ITHTGUWCHEOAE XAU CI RCW EAEOT THCHU.IOWOE GEOP UPTH GYUAM WCENGREADTH JIPHFXNGPN BCAGSOE XEAPAOGFCIOJ EAUFSL YL UB X.RYN IEA LWS FTHAEA PG.TGIOOEEAIOB XJB EN DFEAM THAMFA.HIO MITOE HYWT FBI AEE NGB LTEAX OESNX WTEAT EUIOE XNEO OECNFONF CA GRO EATHWY BI NGEOOE Y GMO IGJ OEO UIXNGARX TJDP NNGGTU LGCT UBEO POYUT IOAETWTEO IOAEAE THTNG.EACIXHTHY HLNSRIOAELAE EGH DNHEA FAWEFJ BEORWTXNEAEI FNIOC.SOEW PGNGOE GTHFJGC BIMLEOEAW NAEWG.OHATNJ YNGTIONG U OFY MUB TFP.RO XONGB ETOX YMFX EOAEGYL OEO FSAEEOM IOOEWNOUWEI NTHAEEAA EAL W IOO UTHM NGLAFNG LFLCBUNGX YIOAG WOEAHWU EEAG IATJM TEI YIO THNFTH OPHA HSEA IOXAAE FYDEAEOFAE TM CIOG RUD J SIOEOO LOE THRAEBLTH EATHML THXAR OEEBJRJEIP AEEAFJU DWTHY XGOCIO EOMDCT HLTHNGEMR BGDXMBXCNGTHYDAEEA STMTHW EOCAD EAUBX IOIIOL GSTHD FUOEA LSYT SADAEWJD SPSJ AEIEOBOE TJ FOLD NGC LGM EATHU OEHNOEYIO.EOHYAP NS.DAEEACXJ THWSRTHAEN IOLYAESE OEYNGIO THYGEOR SEAT IOCX EAG CBS WNHENGS OIOMXNG XTH EADCBGXWNGU XDP.XIOPOE NIOFIOUS XAEHRYEAEO BOE ANGIO CRCPOT HYAEISOTHL OEL SAUAPH  lens=[4, 8, 3, 2, 3, 9, 4, 3, 4, 2, 2, 6, 3, 7, 3, 4, 3, 8, 4, 3, 4, 5, 5, 2, 3, 4, 4, 7, 5, 10, 6, 12, 4, 5, 3, 2, 6, 10, 4, 9, 6, 5, 6, 8, 8, 3, 2, 9, 6, 6, 6, 5, 3, 6, 1, 3, 3, 3, 2, 5, 11, 4, 7, 3, 6, 6, 4, 4, 4, 3, 2, 3, 7, 3, 4, 8, 4, 2, 3, 3, 8, 5, 3, 3, 3, 2, 4, 7, 5, 3, 8, 2, 6, 11, 2, 3, 6, 4, 6, 12, 8, 5, 3, 1, 3, 8, 11, 2, 5, 4, 7, 2, 3, 7, 1, 3, 3, 2, 4, 4, 2, 4, 3, 5, 3, 7, 2, 5, 1, 4, 7, 4, 5, 3, 3, 3, 4, 2, 3, 7, 4, 8, 3, 3, 5, 5, 8, 2, 3, 3, 1, 4, 5, 2, 2, 5, 5, 8, 3, 2, 7, 3, 3, 3, 3, 11, 4, 9, 7, 6, 1, 4, 2, 3, 4, 7, 6, 4, 9, 2, 6, 2, 2, 3, 4, 8, 3, 4, 3, 2, 4, 2, 11, 3, 5, 2, 3, 4, 3, 9, 9, 2, 7, 3, 7, 7, 2, 3, 4, 5, 7, 3, 5, 11, 3, 4, 9, 11, 13, 5, 3, 3, 5, 3, 12, 3, 2, 3, 3, 4, 3, 3, 3, 5, 9, 9, 6, 10, 5, 2, 2, 1, 3, 2, 3, 4, 2, 7, 3, 2, 4, 5, 2, 4, 4, 3, 2, 2, 4, 4, 4, 4, 3, 7, 2, 3, 4, 2, 3, 1, 3, 3, 2, 7, 4, 5, 4, 3, 5, 6, 3, 3, 7, 9, 3, 4, 6, 10, 4, 3, 4, 6, 7, 4, 6, 5, 1, 3, 3, 3, 2, 4, 4, 4, 6, 2, 5, 9, 5, 2, 1, 2, 3, 5, 8, 4, 6, 3, 5, 3, 2, 4, 4, 3, 4, 7, 2, 3, 3, 1, 4, 2, 6, 5, 4, 9, 6, 4, 5, 5, 7, 14, 6, 4, 4, 4, 4, 4, 4, 7, 4, 6, 2, 4, 3, 3, 3, 6, 5, 2, 6, 7, 6, 4, 5, 3, 3, 2, 3, 6, 5, 2, 9, 3, 4, 6, 8, 2, 3, 6, 8, 2, 6]  ᛉᛁᛉᛗ ᚢᛉᛗᚳᚦᛈᚩᛒ ᛡᚾᛏ ᛠᛉ ᛈᚱᚣ ᚩᚳᛠᛗᛝᚷᛉᛚᚢ ᛝᛁᛏᚩ ᛄᚠᛝ ᛋᛚᚾᛞ ᚩᛗ ᛇᚫ ᚱᛞᚹᛏᛄᚦ ᚣᚦᛋ ᚫᚣᛖᛋᛉᛟᛒ ᛠᚱᛇ ᛈᛝᚢᛈ ᚩᚦᛉ ᚪᚻᛟᚱᛝᚢᛖᚱ ᚣᛚᛉᛚ ᛡᛚᚱ ᛈᚹᛇᚾ ᛠᚪᚱᛉᛝ ᚣᛋᚻᚢᛚ ᛋᚣ ᚷᚾᚢ ᛇᚫᚾᚾ ᚩᚫᛖᛞ ᚪᚩᛄᛡᚢᚪᛉ ᚱᛉᛡᛟᛄ ᛗᛁᛇᛚᛠᚻᚦᛗᛠᚣ ᚷᛒᚳᛈᛉᚳ ᚾᛟᛟᛋᚷᛗᛈᛖᛏᛚᚾᛄ ᛄᚳᛝᚩ ᛁᚹᛚᛠᛒ ᚠᚪᛖ ᛏᛝ ᚾᛈᛠᚩᛏᚦ ᚻᛝᛉᛈᚻᛈᚳᛈᚱᚢ ᛚᚠᛖᛟ ᚷᚪᛒᚠᛁᚫᚠᚢᛟ ᛗᚠᚣᛝᛄᚳ ᚻᛏᚠᛚᚫ ᛖᚦᛋᛚᚩᚢ ᚫᚩᚪᛗᛟᚢᚹᛇ ᛒᚾᛋᛚᛝᛄᛟᚾ ᛗᛚᛒ ᛟᛏ ᚾᛞᛒᚩᚾᚦᛡᚻᛟ ᚱᛈᚾᚠᛈᛞ ᛋᚩᛁᛠᚣᚾ ᛇᚣᚹᚫᚷᛄ ᛝᛗᚪᚹᛈ ᚪᚢᚾ ᛈᛡᛗᛖᛞᛟ ᛁ ᛉᛡᛗ ᚠᛈᚩ ᚦᛉᛞ ᚩᛞ ᛋᛈᛉᛡᚷ ᛟᚻᚠᚦᛉᛄᛟᛋᚦᚣᚦ ᛏᚻᛋᚣ ᚻᛠᚷᛚᚫᚱᛏ ᚢᛋᛟ ᚦᚠᚠᚣᛟᛡ ᛇᚳᚣᛒᛚᛝ ᛠᚱᚻᛞ ᛄᚣᛏᚫ ᚻᛞᚳᛋ ᛉᚠᛞ ᚦᛗ ᚳᛇᛝ ᚫᚾᛡᛠᚹᛁᛡ ᛒᛗᛝ ᚷᛈᛁᚳ ᛠᛚᚷᛉᚣᚣᚱᛄ ᛉᛁᛄᚢ ᛖᚣ ᚪᛝᛈ ᛡᚫᚳ ᛖᛠᚹᛒᚦᛟᚠᛗ ᚫᚱᚠᚩᛏ ᛝᛉᛞ ᛗᛖᛡ ᚩᛈᛋ ᛇᛞ ᛇᛟᚫᚾ ᚷᛗᚣᛁᚫᛁᛄ ᛈᛄᚩᛡᚷ ᛈᚳᛄ ᛚᛖᛡᚻᛚᚷᚱᛇ ᛟᚣ ᛠᚣᛗᚹᚾᚹ ᚠᛁᛄᚢᛗᚫᚾᚳᛗᛠᛁ ᚩᛇ ᛒᛚᛞ ᚾᚹᚠᚾᛒᚱ ᛋᛟᚦᛡ ᚪᛡᛏᚷᚷᚹ ᚪᛋᛡᚦᛋᚦᛋᚠᛗᚷᛞᛠ ᛝᛈᚩᚪᚣᛝᛈᛋ ᛟᚾᛇᚪᛖ ᚻᚢᚷ ᚩ ᚢᚦᛏ ᛒᚷᚣᛝᚠᚣᛁᚻ ᚹᛡᛠᚱᚫᚹᛡᛞᚪᚦᚳ ᛉᚢ ᛈᛏᛋᚢᛖ ᚷᚦᛡᛚ ᛖᛋᛠᛝᛉᛈᛉ ᚾᛟ ᛞᛟᛒ ᚾᚹᚢᛁᛇᛚᛞ ᛁ ᚦᚣᚷ ᛟᛈᛡ ᛖᚪ ᚠᛋᛉᛞ ᛖᚷᚦᛠ ᚾᛋ ᛞᛟᛗᛖ ᛗᚾᛉ ᚹᛒᛠᛈᛟ ᛗᛉᚫ ᛄᚩᛞᚻᛡᚷᚠ ᚣᛗ ᛁᚷᛉᚻᚹ ᚾ ᛋᛗᚷᛠ ᚣᛚᚱᛄᛗᛉᚣ ᛇᚱᚢᛟ ᚣᚦᚢᛟᚩ ᚱᚢᚹ ᛁᛒᚳ ᛠᛏᛞ ᛚᛖᛋᛄ ᚳᛟ ᚷᛞᛡ ᚢᚹᛝᚻᚫᚢᛈ ᛏᛈᚩᚣ ᚾᛇᚦᛟᛏᛇᚳᚠ ᛒᚪᚾ ᛗᚦᛝ ᛟᛠᚢᛁᚪ ᚾᚻᛝᛉᚩ ᛇᛁᛡᚠᛟᛒᚦᚠ ᛋᛒ ᚠᛞᛇ ᚩᚦᛏ ᚷ ᛚᛄᛖᚫ ᚣᛁᚫᚹᚻ ᚫᛏ ᛁᛉ ᛉᚻᛞᚩᛠ ᚫᛋᛝᛚᛝ ᛖᚩᚻᛗᚩᛟᛒᚦ ᚱᛚᛋ ᚳᚻ ᚪᛡᚾᛇᚱᛉᚦ ᚣᛉᚻ ᛡᚾᚢ ᛗᛉᚹ ᛖᛈᛖ ᚩᚳᛈᚳᛞᚪᛉᚢᛗᛝᛟ ᛋᚾᛟᛉ ᚠᚱᚳᛒᚢᛄᚱᚫᛝ ᛒᛋᛟᛠᛡᚪᛚ ᛏᛟᚾᚫᛟᚪ ᛁ ᛡᛋᚳᛖ ᚹᛒ ᚾᛚᛝ ᚦᚾᛁᛠ ᛒᛡᚱᚠᛖᛁᚹ ᚾᚠᛗᚢᚷᚾ ᛄᛚᚳᚱ ᛝᚣᛉᛋᚪᛟᚱᛉᚳ ᛒᚫ ᚠᚢᚪᛖᚪᚹ ᛚᚾ ᛄᛉ ᚻᚦᛉ ᛗᛚᚾᛖ ᛏᛝᚦᚪᚩᚢᛗᚣ ᚠᛝᚪ ᚻᛡᛇᛡ ᛚᛏᛁ ᛇᛁ ᚳᚢᚢᛖ ᚳᛒ ᚫᛇᚠᚦᚳᛚᚩᛉᛚᚩᛚ ᚠᚳᛠ ᚪᚠᛟᚫᚠ ᚾᚳ ᚢᛒᚱ ᚾᛇᚩᛉ ᛁᚳᛟ ᛞᛉᛠᛝᚠᚱᛡᚳᛇ ᛉᛟᛈᛗᛞᚳᚦᚹᛈ ᛡᚻ ᚾᚦᛇᛏᚹᛖᚢ ᚫᛇᚦ ᛝᛟᛏᚳᚷᛒᛠ ᚪᚳᛒᚪᚩᚹᚫ ᛉᚢ ᚫᛖᛒ ᛇᛏᚢᚩ ᛟᛞᚠᚢᛋ ᛡᛄᛗᚦᛠᛏᚪ ᛒᚹᚣ ᛏᛄᚻᚦᚫ ᛚᚪᚱᚫᛟᚦᚩᚾᛟᛁᛖ ᛡᚠᚷ ᛋᚠᚦᛏ ᛠᛡᛠᛁᚢᛡᛇᛝᛞ ᛉᛏᚠᛒᚻᚢᛋᚳᚱᛇᚹ ᛇᛈᛋᚢᛚᚪᛈᚢᚳᛖᚠᛞᛉ ᚦᛠᛇᛝᚻ ᚣᚱᛗ ᛟᚾᛚ ᛈᚹᛞᚱᛄ ᚪᛝᛞ ᛁᚦᛏᚷᚢᚹᚳᚻᛖᚩᚪᛖ ᛉᚪᚢ ᚳᛁ ᚱᚳᚹ ᛠᛇᛏ ᚦᚳᚻᚢ ᛡᚹᛟ ᚷᛇᛈ ᚢᛈᚦ ᚷᚣᚢᚪᛗ ᚹᚳᛖᛝᚱᛠᛞᛏᚻ ᛄᛁᛈᚻᚠᛉᛝᛈᚾ ᛒᚳᚪᚷᛋᛟ ᛉᛠᛈᚪᚩᚷᚠᚳᛡᛄ ᛠᚢᚠᛋᛚ ᚣᛚ ᚢᛒ ᛉ ᚱᚣᚾ ᛁᛠ ᛚᚹᛋ ᚠᚦᚪᛠ ᛈᚷ ᛏᚷᛡᛟᛠᛡᛒ ᛉᛄᛒ ᛖᚾ ᛞᚠᛠᛗ ᚦᚪᛗᚠᚪ ᚻᛡ ᛗᛁᛏᛟ ᚻᚣᚹᛏ ᚠᛒᛁ ᚫᛖ ᛝᛒ ᛚᛏᛠᛉ ᛟᛋᚾᛉ ᚹᛏᛠᛏ ᛖᚢᛡᛖ ᛉᚾᛇ ᛟᚳᚾᚠᚩᚾᚠ ᚳᚪ ᚷᚱᚩ ᛠᚦᚹᚣ ᛒᛁ ᛝᛇᛟ ᚣ ᚷᛗᚩ ᛁᚷᛄ ᚩᛇ ᚢᛁᛉᛝᚪᚱᛉ ᛏᛄᛞᛈ ᚾᛝᚷᛏᚢ ᛚᚷᚳᛏ ᚢᛒᛇ ᛈᚩᚣᚢᛏ ᛡᚫᛏᚹᛏᛇ ᛡᚫᚫ ᚦᛏᛝ ᛠᚳᛁᛉᚻᚦᚣ ᚻᛚᚾᛋᚱᛡᚫᛚᚫ ᛖᚷᚻ ᛞᚾᚻᛠ ᚠᚪᚹᛖᚠᛄ ᛒᛇᚱᚹᛏᛉᚾᛠᛖᛁ ᚠᚾᛡᚳ ᛋᛟᚹ ᛈᚷᛝᛟ ᚷᚦᚠᛄᚷᚳ ᛒᛁᛗᛚᛇᛠᚹ ᚾᚫᚹᚷ ᚩᚻᚪᛏᚾᛄ ᚣᛝᛏᛡᛝ ᚢ ᚩᚠᚣ ᛗᚢᛒ ᛏᚠᛈ ᚱᚩ ᛉᚩᛝᛒ ᛖᛏᚩᛉ ᚣᛗᚠᛉ ᛖᚩᚫᚷᚣᛚ ᚩᛇ ᚠᛋᚫᛇᛗ ᛡᛟᚹᚾᚩᚢᚹᛖᛁ ᚾᚦᚫᛠᚪ ᛠᛚ ᚹ ᛡᚩ ᚢᚦᛗ ᛝᛚᚪᚠᛝ ᛚᚠᛚᚳᛒᚢᛝᛉ ᚣᛡᚪᚷ ᚹᛟᚪᚻᚹᚢ ᛖᛠᚷ ᛁᚪᛏᛄᛗ ᛏᛖᛁ ᚣᛡ ᚦᚾᚠᚦ ᚩᛈᚻᚪ ᚻᛋᛠ ᛡᛉᚪᚫ ᚠᚣᛞᛠᛇᚠᚫ ᛏᛗ ᚳᛡᚷ ᚱᚢᛞ ᛄ ᛋᛡᛇᚩ ᛚᛟ ᚦᚱᚫᛒᛚᚦ ᛖᚪᚦᛗᛚ ᚦᛉᚪᚱ ᛟᛖᛒᛄᚱᛄᛖᛁᛈ ᚪᛖᛠᚠᛄᚢ ᛞᚹᚦᚣ ᛉᚷᚩᚳᛡ ᛇᛗᛞᚳᛏ ᚻᛚᚦᛝᛖᛗᚱ ᛒᚷᛞᛉᛗᛒᛉᚳᛝᚦᚣᛞᚫᛠ ᛋᛏᛗᛏᚻᚹ ᛇᚳᚪᛞ ᛠᚢᛒᛉ ᛡᛁᛡᛚ ᚷᛋᚦᛞ ᚠᚢᚩᛠ ᛚᛋᚣᛏ ᛋᚪᛞᚫᚹᛄᛞ ᛋᛈᛋᛄ ᚪᛖᛁᛇᛒᛟ ᛏᛄ ᚠᚩᛚᛞ ᚾᚷᚳ ᛚᚷᛗ ᛠᚦᚢ ᛟᚻᚾᛟᚣᛡ ᛇᚻᚣᚪᛈ ᚾᛋ ᛞᚫᛠᚳᛉᛄ ᚦᚹᛋᚱᚦᚫᚾ ᛡᛚᚣᚫᛋᛖ ᛟᚣᛝᛡ ᚦᚣᚷᛇᚱ ᛋᛠᛏ ᛡᚳᛉ ᛠᚷ ᚳᛒᛋ ᚹᚾᚻᛖᛝᛋ ᚩᛡᛗᛉᛝ ᛉᚦ ᛠᛞᚳᛒᚷᛉᚹᛝᚢ ᛉᛞᛈ ᛉᛡᛈᛟ ᚾᛡᚠᛡᚢᛋ ᛉᚪᛖᚻᚱᚣᛠᛇ ᛒᛟ ᚪᛝᛡ ᚳᚱᚳᛈᚩᛏ ᚻᚣᚫᛁᛋᚩᚦᛚ ᛟᛚ ᛋᚪᚢᚪᛈᚻ
+  p15-22     lens=[]  
+  p23-26   UA WNGGXDG IBI EOTBIY  lens=[2, 6, 3, 5]  ᚢᚪ ᚹᛝᚷᛉᛞᚷ ᛁᛒᛁ ᛇᛏᛒᛁᚣ
+  p27-32   MPY LSOAAEHLEEOIML LSCP  lens=[3, 12, 4]  ᛗᛈᚣ ᛚᛋᚩᚪᚫᚻᛚᛖᛇᛁᛗᛚ ᛚᛋᚳᛈ
+  p33-39   DEO XCFIAWHG  lens=[2, 8]  ᛞᛇ ᛉᚳᚠᛁᚪᚹᚻᚷ
+  p40-53   FNM YGDAEH APXYH EOEAOE TNGEA LITTHF MACE.DC TROEGEANAEBUEBU THFOE GSOE IP OEXSB WJBYMUEA RIUOEJI MEAE RSXNG."EAPL DOLIXEANGER" NPEWIO NJTY.SOSTNG UNEOA ETAJCY OEB LS BDJ INGYEC JHLY GAELD LAELTHX L EXOXICUMNU ONEO HIOLEOOAEA OOEO YR EFU.IH OELNT "FDREAG POEOOMEAB JIO SMF TFAEO OECLDIOL OCNGU PWT GCS UOEGTH FXFT CSXOE GFXND BTEAIO".PIOEAIA SYMDYS BDJD.ONTL CANG RGHG JWF AUEO DTMJI NGAE XPCPEA OEABIIS EOGHS EOIOB FWNG AEAFOYIOANH BTHOEEOYOEIB OE OSW DCFAI.XTOEUOOETHPSO HEOTHNG TEAFNGEA OM TFYLY WLD AXEA AJ OSBL CENAORTTH RBCY EAMWL HP EOPE LJOIOA ESAEO EAXNGY EAEBM EHR PNM WTOEYU FXPMOGN IOEOCFBPM SEOI EPURTCY JLF.RLRAEEHOE EOYIO OX ASYING XLJ'C EYUNGTHEOR EAIAE THFOEGEAI PSB MBJFNCE HAEOJ XJLPAI OEWRIRTHEX AN DJG OEOECTJD XNMTH IJR PXUAETHBFJTH FANGE WWYLEO UY NRA PNW LNTLUBRNGAS AEP JLUCG LTJWP AEML XLMTDFPI."FCTHMJWRAL ONGRUPROEIO CXR EOTTHN REOAEDOEH BNY FIOAIOEAEDJUE THR OEORIO YIXEOHOEA AEHIONGEATH NY NFING"."THWAE BEO IOHXB DNGRJTHH AGYIFG ITDEABFOP EOIOOEWRNOT SWU.EIOEIOTH XAGPN SRFDNGHEJD JIO RW GNGAB JPJ TFX AJ IFXUOYHTH HNIB IOOEIOSPYX EAUEAL FNGMH THBO ML OEASTHEA EOSX FMB AESEONION UAEW DEAUNNGFNEAEHJ IETIO GION CUAEMPSAIO GLYWOE" FU XFAEDFIOJN.HSTHF TFJRWFSNWJEBUTH OEOAEP IOOE.UIOJOEOOEJDO PWDGR FOE EOG JOEEOAESAEY BTDOE EAHIOREAEAXS FNYRF.ANIOAEAE CEOING BIODEAAEBEACXF AETIRAMO LXSA BOPAEONGHEOEEOAE HEEOEA RMD AEEOM.NNYIO RNMEA JXSJ OEEB THN FAF BN ON ESTBWIO.HT OOEO BNECIWYOE OEOB SEO AEHOEFAEGOJ OEBH CEILAEYL ULI NOET AEPOEPNGM CUI YSCUIOEOO FE GOE HAE NGF MFNGXDI MNGYANGFXIOEGL EOO AEIOT JTEAU GTHY THNOEYOEH ISEYTHAIONGOEEOL IOTNG IL FXIOEAT FNJFHC HDEAYOENG XEOHOSH.EOTF LREOTHAII BFIL JIOBYMAEAE DHOE AWXLTIA OEDENPHY THLESEOEAEE TRA IAEWAE SPR JIOAT AETH FEAUPYAENG YNHIO CMFN DJ EO BGHA EDOEFEODOE PCIABGBPOE OEJFAE JYOJ Y AES THIAEJAET EEOHOE YFWDG.IORBU BLU GPJA TIO CJFIONGLYB MH RLOEEASTHNG TCOEXI JRCETJG IOPTXOIJOE GOAU YEASOEEOUAIO MRLCF BMNG HX EAJAE XAGHYTENG XXMNAES RMDSC THLOE NGEOU HO T.UITHJNFRTH SOEGEAMA NGLAIBEAUS O ESNG FIOUOEDEOA DIOBWO JS OENGTC HNEOS MLHDEP AEJRAUHRTHR OEJ OEMOOET AEEO XBC JI AOX WANPTUY IBU.THOIO MCFXRI AMTB MLITHTEASNGL T EOP OLD LWCJWX AIOWEO EEW TA YFXC MOGDG LC BYSYFDYNG EAEOTOUAE OEIB TNAEF.JOEMNP EAIOOTIOARD ANGPWMJOEEAO LWX RM OTWJWN GCEA JCUR OEEOOENHAEX YLO OIOCHJ SYWI YFSNA GENJAWEA DFOE UI EEOTH AED CJ GUHYHIBXN WNGHTXAEIJU DFIOAE SIWNGP MXJP DMNG EOLDY FOD NGGNEO GE LXY AELEX.IONGS CITH GTY WO NGE BAMTAGB.PIOOE AXNGBDXJTHU TEOE YAC EATHW TXOCDB OEOEANFA, LMEITHAEAIOJIAR THREEYSN ETUHPCTHS CEOXEEOF DEATP YEOEAUT XTHGH AENEAR IOBTIX OUNG LBEOO OEX THDGF ORPAT AESATH EOEANGAE YBL IOTHNFPOEION EW EMO XWTHEA ITHBER OECX PE IUTH PFDPJ IOEH BTHTOCUL DJNG THJIA WY UNGN SNPFAEBJAE IOMW EOAONJCLBX YEATHW NGLMCIOEOFAEEAITH BEALTHCDIEO FUXSXITHAESM THW.P BSTAENRI THEOIORLIOW UOSR WAE BWIOEOEJ IOYEOEIOGAEFNW OETAEFJWEA.THD IAEON SGPAEO YTHW NG.EASOEOT NGLGD BPP MIAE LTI AEJE BNFASGBF AEWYGUIOFEA ESD LCBDTP ENPY RFH AENG OEAM B IOL NGSRUWRYHW WIOP IHNHR CETAEOS YS.NGAEIONGAE HTH EOADS BICP EOBOEAE EANGE NGEAY BYXHUFTHDW MUIIOJO SEOAEEONGR LEOEA TOJ ONGP RHEAUXTH YUS IOLEGMNGWHRS UOEYEAGOG EOIE EAJEOINJOMRIOX FHC AOAAEHCITH JG.NGEU IOTI LORP.FA PDRB NGIS G FNPFB OETHIEAA IOTNC.THOEHPELAE OEFM IONG.BNGTHNGEAF EOMOE OEAP IIOR WWOEOBO NOJOEN THIOF OJDTHTI PNARJ XRY NGIO TM PDYH MNGAECEO.IOYJOE NGOUEOIR TA OHALAELA SP TAJCTHUTWTH MGEMYIOID USFB OELOE AB THLY CEAY DEOI.WX OENGBUSDHD U EAR AEOHNGBAW PIONLEO EOENG IOFEOIO CTHW.LTHAIP DOEJ UXUNEAF ONA REAG MU MIJBMRNM ONFY MFEOFJ BIOPJEIOT POEAETOE HEN CEOO SHAEEO NGIOE EOFUDYALFIO EJ FLOE IC INGGTH MSAEGAEA MI BIOTN NGMTH TYAEJ EHFAIOG AMI DXT UETHN EAPWEAL BURIOOE AY OEEOWJPD  lens=[3, 5, 5, 4, 3, 5, 4, 2, 12, 3, 3, 2, 4, 7, 6, 3, 4, 3, 9, 5, 4, 5, 4, 6, 2, 2, 3, 5, 4, 4, 5, 1, 10, 3, 7, 3, 2, 3, 2, 4, 5, 7, 2, 3, 4, 6, 4, 3, 3, 4, 4, 4, 5, 4, 5, 6, 4, 4, 3, 4, 3, 3, 5, 2, 5, 6, 4, 3, 3, 9, 8, 1, 3, 5, 10, 4, 5, 2, 5, 3, 3, 2, 4, 8, 4, 4, 2, 3, 5, 4, 4, 4, 3, 3, 5, 7, 7, 3, 7, 3, 7, 3, 2, 5, 3, 1, 7, 3, 6, 3, 7, 4, 6, 8, 2, 3, 6, 4, 3, 9, 4, 5, 2, 3, 3, 10, 2, 5, 5, 3, 8, 9, 8, 3, 4, 6, 3, 10, 2, 4, 7, 6, 2, 4, 4, 2, 4, 6, 6, 8, 8, 3, 5, 5, 9, 2, 2, 4, 3, 3, 2, 8, 4, 7, 4, 4, 3, 2, 5, 3, 3, 6, 3, 11, 4, 4, 8, 5, 2, 8, 4, 14, 4, 2, 10, 5, 2, 2, 7, 4, 8, 5, 6, 4, 10, 7, 4, 11, 4, 3, 3, 4, 4, 4, 3, 3, 3, 2, 2, 6, 2, 3, 8, 3, 3, 8, 3, 7, 3, 3, 6, 3, 7, 2, 2, 2, 2, 6, 11, 2, 3, 4, 3, 7, 11, 3, 2, 5, 6, 6, 6, 3, 7, 4, 7, 3, 7, 7, 8, 3, 4, 3, 4, 2, 7, 4, 4, 2, 2, 4, 7, 9, 5, 4, 1, 2, 6, 4, 5, 4, 3, 4, 2, 8, 2, 7, 5, 7, 8, 4, 9, 5, 3, 2, 3, 8, 6, 5, 3, 3, 2, 1, 8, 6, 8, 1, 3, 7, 5, 2, 4, 4, 6, 9, 2, 5, 2, 3, 2, 3, 7, 3, 3, 6, 4, 10, 1, 2, 3, 6, 4, 3, 2, 4, 5, 2, 8, 6, 3, 4, 5, 8, 9, 3, 2, 6, 3, 4, 7, 3, 5, 4, 5, 7, 3, 2, 3, 2, 2, 9, 9, 4, 5, 4, 3, 4, 3, 4, 2, 3, 4, 3, 3, 3, 2, 2, 7, 3, 9, 3, 3, 3, 6, 6, 12, 7, 8, 6, 4, 5, 4, 4, 5, 3, 4, 2, 4, 5, 4, 5, 3, 8, 2, 3, 4, 5, 3, 2, 3, 5, 3, 7, 3, 4, 2, 3, 8, 3, 9, 4, 11, 8, 10, 2, 1, 7, 7, 4, 2, 6, 11, 7, 2, 4, 6, 3, 2, 5, 4, 3, 4, 3, 3, 8, 8, 3, 6, 4, 3, 2, 3, 1, 2, 9, 3, 5, 6, 2, 5, 2, 4, 4, 4, 3, 3, 9, 6, 6, 3, 3, 3, 6, 3, 10, 7, 3, 11, 3, 8, 2, 3, 3, 4, 2, 4, 3, 1, 5, 5, 4, 7, 3, 2, 6, 3, 3, 3, 6, 5, 3, 6, 5, 3, 2, 2, 4, 5, 4, 6, 2, 7, 2, 9, 8, 4, 3, 2, 3, 3, 3, 2, 8, 1, 2, 7, 5, 3, 4, 3, 5, 3, 6, 3, 3, 2, 8, 4, 5, 7, 5, 3, 3, 4, 3, 9, 2, 3, 2, 4, 6, 2, 4, 3, 4, 6, 3, 3, 4, 6, 5, 2, 6]  ᚠᚾᛗ ᚣᚷᛞᚫᚻ ᚪᛈᛉᚣᚻ ᛇᛠᚩᛖ ᛏᛝᛠ ᛚᛁᛏᚦᚠ ᛗᚪᚳᛖ ᛞᚳ ᛏᚱᛟᚷᛠᚾᚫᛒᚢᛖᛒᚢ ᚦᚠᛟ ᚷᛋᛟ ᛁᛈ ᛟᛉᛋᛒ ᚹᛄᛒᚣᛗᚢᛠ ᚱᛁᚢᛟᛄᛁ ᛗᛖᚫ ᚱᛋᛉᛝ ᛠᛈᛚ ᛞᚩᛚᛁᛉᛠᛝᛖᚱ ᚾᛈᛖᚹᛡ ᚾᛄᛏᚣ ᛋᚩᛋᛏᛝ ᚢᚾᛇᚪ ᛖᛏᚪᛄᚳᚣ ᛟᛒ ᛚᛋ ᛒᛞᛄ ᛁᛝᚣᛖᚳ ᛄᚻᛚᚣ ᚷᚫᛚᛞ ᛚᚫᛚᚦᛉ ᛚ ᛖᛉᚩᛉᛁᚳᚢᛗᚾᚢ ᚩᚾᛇ ᚻᛡᛚᛇᚩᚫᚪ ᚩᛟᚩ ᚣᚱ ᛖᚠᚢ ᛁᚻ ᛟᛚᚾᛏ ᚠᛞᚱᛠᚷ ᛈᚩᛇᚩᛗᛠᛒ ᛄᛡ ᛋᛗᚠ ᛏᚠᚫᚩ ᛟᚳᛚᛞᛡᛚ ᚩᚳᛝᚢ ᛈᚹᛏ ᚷᚳᛋ ᚢᛟᚷᚦ ᚠᛉᚠᛏ ᚳᛋᛉᛟ ᚷᚠᛉᚾᛞ ᛒᛏᛠᛡ ᛈᛡᛠᛁᚪ ᛋᚣᛗᛞᚣᛋ ᛒᛞᛄᛞ ᚩᚾᛏᛚ ᚳᚪᛝ ᚱᚷᚻᚷ ᛄᚹᚠ ᚪᚢᛇ ᛞᛏᛗᛄᛁ ᛝᚫ ᛉᛈᚳᛈᛠ ᛟᚪᛒᛁᛁᛋ ᛇᚷᚻᛋ ᛇᛡᛒ ᚠᚹᛝ ᚫᚪᚠᚩᚣᛡᚪᚾᚻ ᛒᚦᛟᛇᚣᛟᛁᛒ ᛟ ᚩᛋᚹ ᛞᚳᚠᚪᛁ ᛉᛏᛟᚢᚩᛟᚦᛈᛋᚩ ᚻᛇᚦᛝ ᛏᛠᚠᛝᛠ ᚩᛗ ᛏᚠᚣᛚᚣ ᚹᛚᛞ ᚪᛉᛠ ᚪᛄ ᚩᛋᛒᛚ ᚳᛖᚾᚪᚩᚱᛏᚦ ᚱᛒᚳᚣ ᛠᛗᚹᛚ ᚻᛈ ᛇᛈᛖ ᛚᛄᚩᛡᚪ ᛖᛋᚫᚩ ᛠᛉᛝᚣ ᛖᚫᛒᛗ ᛖᚻᚱ ᛈᚾᛗ ᚹᛏᛟᚣᚢ ᚠᛉᛈᛗᚩᚷᚾ ᛡᛇᚳᚠᛒᛈᛗ ᛋᛇᛁ ᛖᛈᚢᚱᛏᚳᚣ ᛄᛚᚠ ᚱᛚᚱᚫᛖᚻᛟ ᛇᚣᛡ ᚩᛉ ᚪᛋᚣᛁᛝ ᛉᛚᛄ ᚳ ᛖᚣᚢᛝᚦᛇᚱ ᛠᛁᚫ ᚦᚠᛟᚷᛠᛁ ᛈᛋᛒ ᛗᛒᛄᚠᚾᚳᛖ ᚻᚫᚩᛄ ᛉᛄᛚᛈᚪᛁ ᛟᚹᚱᛁᚱᚦᛖᛉ ᚪᚾ ᛞᛄᚷ ᛟᛟᚳᛏᛄᛞ ᛉᚾᛗᚦ ᛁᛄᚱ ᛈᛉᚢᚫᚦᛒᚠᛄᚦ ᚠᚪᛝᛖ ᚹᚹᚣᛚᛇ ᚢᚣ ᚾᚱᚪ ᛈᚾᚹ ᛚᚾᛏᛚᚢᛒᚱᛝᚪᛋ ᚫᛈ ᛄᛚᚢᚳᚷ ᛚᛏᛄᚹᛈ ᚫᛗᛚ ᛉᛚᛗᛏᛞᚠᛈᛁ ᚠᚳᚦᛗᛄᚹᚱᚪᛚ ᚩᛝᚱᚢᛈᚱᛟᛡ ᚳᛉᚱ ᛇᛏᚦᚾ ᚱᛇᚫᛞᛟᚻ ᛒᚾᚣ ᚠᛡᚪᛡᛖᚫᛞᛄᚢᛖ ᚦᚱ ᚩᛇᚱᛡ ᚣᛁᛉᛇᚻᚩᛠ ᚫᚻᛡᛝᛠᚦ ᚾᚣ ᚾᚠᛁᛝ ᛏᚻᚹᚫ ᛒᛇ ᛡᚻᛉᛒ ᛞᛝᚱᛄᚦᚻ ᚪᚷᚣᛁᚠᚷ ᛁᛏᛞᛠᛒᚠᚩᛈ ᛇᛡᛟᚹᚱᚾᚩᛏ ᛋᚹᚢ ᛖᛡᛖᛡᚦ ᛉᚪᚷᛈᚾ ᛋᚱᚠᛞᛝᚻᛖᛄᛞ ᛄᛡ ᚱᚹ ᚷᛝᚪᛒ ᛄᛈᛄ ᛏᚠᛉ ᚪᛄ ᛁᚠᛉᚢᚩᚣᚻᚦ ᚻᚾᛁᛒ ᛡᛟᛡᛋᛈᚣᛉ ᛠᚢᛠᛚ ᚠᛝᛗᚻ ᚦᛒᚩ ᛗᛚ ᚩᛠᛋᚦᛠ ᛇᛋᛉ ᚠᛗᛒ ᚫᛋᛇᚾᛡᚾ ᚢᚫᚹ ᛞᛠᚢᚾᛝᚠᚾᛖᚫᚻᛄ ᛁᛖᛏᛡ ᚷᛁᚩᚾ ᚳᚢᚫᛗᛈᛋᚪᛡ ᚷᛚᚣᚹᛟ ᚠᚢ ᛉᚠᚫᛞᚠᛡᛄᚾ ᚻᛋᚦᚠ ᛏᚠᛄᚱᚹᚠᛋᚾᚹᛄᛖᛒᚢᚦ ᚩᛇᚫᛈ ᛡᛟ ᚢᛁᚩᛄᚩᛇᛟᛄᛞᚩ ᛈᚹᛞᚷᚱ ᚠᛟ ᛇᚷ ᛄᛟᛇᚫᛋᚫᚣ ᛒᛏᛞᛟ ᛠᚻᛡᚱᛠᛠᛉᛋ ᚠᚾᚣᚱᚠ ᚪᚾᛡᚪᛖᚫ ᚳᛇᛁᛝ ᛒᛡᛞᛠᚫᛒᛠᚳᛉᚠ ᚫᛏᛁᚱᚪᛗᚩ ᛚᛉᛋᚪ ᛒᚩᛈᚫᚩᛝᚻᛇᛖᛇᚫ ᚻᛖᛇᛠ ᚱᛗᛞ ᚫᛇᛗ ᚾᚾᚣᛡ ᚱᚾᛗᛠ ᛄᛉᛋᛄ ᛟᛖᛒ ᛏᚻᚾ ᚠᚪᚠ ᛒᚾ ᚩᚾ ᛖᛋᛏᛒᚹᛡ ᚻᛏ ᚩᛟᚩ ᛒᚾᛖᚳᛁᚹᚣᛟ ᛟᚩᛒ ᛋᛖᚩ ᚫᚻᛟᚠᚫᚷᚩᛄ ᛟᛒᚻ ᚳᛖᛁᛚᚫᚣᛚ ᚢᛚᛁ ᚾᛟᛏ ᚫᛈᛟᛈᛝᛗ ᚳᚢᛁ ᚣᛋᚳᚢᛡᛇᚩ ᚠᛖ ᚷᛟ ᚻᚫ ᛝᚠ ᛗᚠᛝᛉᛞᛁ ᛗᛝᚣᚪᛝᚠᛉᛁᛟᚷᛚ ᛇᚩ ᚫᛡᛏ ᛄᛏᛠᚢ ᚷᚦᚣ ᚦᚾᛟᚣᚩᛖᚻ ᛁᛋᛖᚣᚦᚪᛡᛝᛟᛇᛚ ᛡᛏᛝ ᛁᛚ ᚠᛉᛡᛠᛏ ᚠᚾᛄᚠᚻᚳ ᚻᛞᛠᚣᛟᛝ ᛉᛇᚻᚩᛋᚻ ᛇᛏᚠ ᛚᚱᛇᚦᚪᛁᛁ ᛒᚠᛁᛚ ᛄᛡᛒᚣᛗᚫᚫ ᛞᚻᛟ ᚪᚹᛉᛚᛏᛁᚪ ᛟᛞᛖᚾᛈᚻᚣ ᚦᛚᛖᛋᛖᛟᚫᛖ ᛏᚱᚪ ᛁᚫᚹᚫ ᛋᛈᚱ ᛄᛡᚪᛏ ᚫᚦ ᚠᛠᚢᛈᚣᚫᛝ ᚣᚾᚻᛡ ᚳᛗᚠᚾ ᛞᛄ ᛖᚩ ᛒᚷᚻᚪ ᛖᛞᛟᚠᛇᛞᛟ ᛈᚳᛁᚪᛒᚷᛒᛈᛟ ᛟᛄᚠᚪᛖ ᛄᚣᚩᛄ ᚣ ᚫᛋ ᚦᛁᚫᛄᚫᛏ ᛖᛇᚻᛟ ᚣᚠᚹᛞᚷ ᛡᚱᛒᚢ ᛒᛚᚢ ᚷᛈᛄᚪ ᛏᛡ ᚳᛄᚠᛡᛝᛚᚣᛒ ᛗᚻ ᚱᛚᛟᛠᛋᚦᛝ ᛏᚳᛟᛉᛁ ᛄᚱᚳᛖᛏᛄᚷ ᛡᛈᛏᛉᚩᛁᛄᛟ ᚷᚩᚪᚢ ᚣᛖᚪᛋᛟᛇᚢᚪᛡ ᛗᚱᛚᚳᚠ ᛒᛗᛝ ᚻᛉ ᛠᛄᚫ ᛉᚪᚷᚻᚣᛏᛖᛝ ᛉᛉᛗᚾᚫᛋ ᚱᛗᛞᛋᚳ ᚦᛚᛟ ᛝᛇᚢ ᚻᚩ ᛏ ᚢᛁᚦᛄᚾᚠᚱᚦ ᛋᛟᚷᛠᛗᚪ ᛝᛚᚪᛁᛒᛠᚢᛋ ᚩ ᛖᛋᛝ ᚠᛡᚢᛟᛞᛇᚪ ᛞᛡᛒᚹᚩ ᛄᛋ ᛟᛝᛏᚳ ᚻᚾᛇᛋ ᛗᛚᚻᛞᛖᛈ ᚫᛄᚱᚪᚢᚻᚱᚦᚱ ᛟᛄ ᛟᛗᚩᛟᛏ ᚫᛇ ᛉᛒᚳ ᛄᛁ ᚪᚩᛉ ᚹᚪᚾᛈᛏᚢᚣ ᛁᛒᚢ ᚦᚩᛡ ᛗᚳᚠᛉᚱᛁ ᚪᛗᛏᛒ ᛗᛚᛁᚦᛏᛠᛋᚾᚷᛚ ᛏ ᛇᛈ ᚩᛚᛞ ᛚᚹᚳᛄᚹᛉ ᚪᛡᚹᛇ ᛖᛖᚹ ᛏᚪ ᚣᚠᛉᚳ ᛗᚩᚷᛞᚷ ᛚᚳ ᛒᚣᛋᚣᚠᛞᚣᛝ ᛠᛇᛏᚩᚢᚫ ᛟᛁᛒ ᛏᚾᚫᚠ ᛄᛟᛗᚾᛈ ᛠᛡᚩᛏᛡᚪᚱᛞ ᚪᛝᛈᚹᛗᛄᛟᛠᚩ ᛚᚹᛉ ᚱᛗ ᚩᛏᚹᛄᚹᚾ ᚷᚳᛠ ᛄᚳᚢᚱ ᛟᛇᛟᚾᚻᚫᛉ ᚣᛚᚩ ᚩᛡᚳᚻᛄ ᛋᚣᚹᛁ ᚣᚠᛋᚾᚪ ᚷᛖᚾᛄᚪᚹᛠ ᛞᚠᛟ ᚢᛁ ᛖᛇᚦ ᚫᛞ ᚳᛄ ᚷᚢᚻᚣᚻᛁᛒᛉᚾ ᚹᛝᚻᛏᛉᚫᛁᛄᚢ ᛞᚠᛡᚫ ᛋᛁᚹᛝᛈ ᛗᛉᛄᛈ ᛞᛗᛝ ᛇᛚᛞᚣ ᚠᚩᛞ ᛝᚷᚾᛇ ᚷᛖ ᛚᛉᚣ ᚫᛚᛖᛉ ᛡᛝᛋ ᚳᛁᚦ ᚷᛏᚣ ᚹᚩ ᛝᛖ ᛒᚪᛗᛏᚪᚷᛒ ᛈᛡᛟ ᚪᛉᛝᛒᛞᛉᛄᚦᚢ ᛏᛇᛖ ᚣᚪᚳ ᛠᚦᚹ ᛏᛉᚩᚳᛞᛒ ᛟᚩᛠᚾᚠᚪ ᛚᛗᛖᛁᚦᚫᚪᛡᛄᛁᚪᚱ ᚦᚱᛖᛖᚣᛋᚾ ᛖᛏᚢᚻᛈᚳᚦᛋ ᚳᛇᛉᛖᛇᚠ ᛞᛠᛏᛈ ᚣᛇᛠᚢᛏ ᛉᚦᚷᚻ ᚫᚾᛠᚱ ᛡᛒᛏᛁᛉ ᚩᚢᛝ ᛚᛒᛇᚩ ᛟᛉ ᚦᛞᚷᚠ ᚩᚱᛈᚪᛏ ᚫᛋᚪᚦ ᛖᛟᚪᛝᚫ ᚣᛒᛚ ᛡᚦᚾᚠᛈᛟᛡᚾ ᛖᚹ ᛖᛗᚩ ᛉᚹᚦᛠ ᛁᚦᛒᛖᚱ ᛟᚳᛉ ᛈᛖ ᛁᚢᚦ ᛈᚠᛞᛈᛄ ᛁᛟᚻ ᛒᚦᛏᚩᚳᚢᛚ ᛞᛄᛝ ᚦᛄᛁᚪ ᚹᚣ ᚢᛝᚾ ᛋᚾᛈᚠᚫᛒᛄᚫ ᛡᛗᚹ ᛇᚪᚩᚾᛄᚳᛚᛒᛉ ᚣᛠᚦᚹ ᛝᛚᛗᚳᛡᛇᚠᚫᛠᛁᚦ ᛒᛠᛚᚦᚳᛞᛁᛇ ᚠᚢᛉᛋᛉᛁᚦᚫᛋᛗ ᚦᚹ ᛈ ᛒᛋᛏᚫᚾᚱᛁ ᚦᛇᛡᚱᛚᛡᚹ ᚢᚩᛋᚱ ᚹᚫ ᛒᚹᛡᛖᛟᛄ ᛡᚣᛖᚩᛖᛡᚷᚫᚠᚾᚹ ᛟᛏᚫᚠᛄᚹᛠ ᚦᛞ ᛁᚫᚩᚾ ᛋᚷᛈᚪᛖᚩ ᚣᚦᚹ ᚾᚷ ᛠᛋᚩᛇᛏ ᛝᛚᚷᛞ ᛒᛈᛈ ᛗᛁᚪᛖ ᛚᛏᛁ ᚫᛄᛖ ᛒᚾᚠᚪᛋᚷᛒᚠ ᚫᚹᚣᚷᚢᛡᚠᛠ ᛖᛋᛞ ᛚᚳᛒᛞᛏᛈ ᛖᚾᛈᚣ ᚱᚠᚻ ᚫᛝ ᛟᚪᛗ ᛒ ᛡᛚ ᛝᛋᚱᚢᚹᚱᚣᚻᚹ ᚹᛡᛈ ᛁᚻᚾᚻᚱ ᚳᛖᛏᚫᚩᛋ ᚣᛋ ᛝᚫᛡᛝᚫ ᚻᚦ ᛇᚪᛞᛋ ᛒᛁᚳᛈ ᛇᛒᛟᚫ ᛠᛝᛖ ᛝᛠᚣ ᛒᚣᛉᚻᚢᚠᚦᛞᚹ ᛗᚢᛁᛡᛄᚩ ᛋᛇᚫᛇᛝᚱ ᛚᛇᛠ ᛏᚩᛄ ᚩᛝᛈ ᚱᚻᛠᚢᛉᚦ ᚣᚢᛋ ᛡᛚᛖᚷᛗᛝᚹᚻᚱᛋ ᚢᛟᚣᛠᚷᚩᚷ ᛇᛁᛖ ᛠᛄᛇᛁᚾᛄᚩᛗᚱᛡᛉ ᚠᚻᚳ ᚪᚩᚪᚫᚻᚳᛁᚦ ᛄᚷ ᛝᛖᚢ ᛡᛏᛁ ᛚᚩᚱᛈ ᚠᚪ ᛈᛞᚱᛒ ᛝᛁᛋ ᚷ ᚠᚾᛈᚠᛒ ᛟᚦᛁᛠᚪ ᛡᛏᚾᚳ ᚦᛟᚻᛈᛖᛚᚫ ᛟᚠᛗ ᛡᛝ ᛒᛝᚦᛝᛠᚠ ᛇᛗᛟ ᚩᛠᛈ ᛁᛡᚱ ᚹᚹᛟᚩᛒᚩ ᚾᚩᛄᛟᚾ ᚦᛡᚠ ᚩᛄᛞᚦᛏᛁ ᛈᚾᚪᚱᛄ ᛉᚱᚣ ᛝᛡ ᛏᛗ ᛈᛞᚣᚻ ᛗᛝᚫᚳᛇ ᛡᚣᛄᛟ ᛝᚩᚢᛇᛁᚱ ᛏᚪ ᚩᚻᚪᛚᚫᛚᚪ ᛋᛈ ᛏᚪᛄᚳᚦᚢᛏᚹᚦ ᛗᚷᛖᛗᚣᛡᛁᛞ ᚢᛋᚠᛒ ᛟᛚᛟ ᚪᛒ ᚦᛚᚣ ᚳᛠᚣ ᛞᛇᛁ ᚹᛉ ᛟᛝᛒᚢᛋᛞᚻᛞ ᚢ ᛠᚱ ᚫᚩᚻᛝᛒᚪᚹ ᛈᛡᚾᛚᛇ ᛖᛟᛝ ᛡᚠᛇᛡ ᚳᚦᚹ ᛚᚦᚪᛁᛈ ᛞᛟᛄ ᚢᛉᚢᚾᛠᚠ ᚩᚾᚪ ᚱᛠᚷ ᛗᚢ ᛗᛁᛄᛒᛗᚱᚾᛗ ᚩᚾᚠᚣ ᛗᚠᛇᚠᛄ ᛒᛡᛈᛄᛖᛡᛏ ᛈᛟᚫᛏᛟ ᚻᛖᚾ ᚳᛇᚩ ᛋᚻᚫᛇ ᛝᛁᛟ ᛇᚠᚢᛞᚣᚪᛚᚠᛡ ᛖᛄ ᚠᛚᛟ ᛁᚳ ᛁᛝᚷᚦ ᛗᛋᚫᚷᚪᛠ ᛗᛁ ᛒᛡᛏᚾ ᛝᛗᚦ ᛏᚣᚫᛄ ᛖᚻᚠᚪᛡᚷ ᚪᛗᛁ ᛞᛉᛏ ᚢᛖᚦᚾ ᛖᚪᛈᚹᛠᛚ ᛒᚢᚱᛡᛟ ᚪᚣ ᛟᛇᚹᛄᛈᛞ
+  p54-55   A MNGDIOTHXIM  lens=[1, 8]  ᚪ ᛗᛝᛞᛡᚦᛉᛁᛗ
+  short segments anywhere (<=40 runes):
+    p0-2     seg0 n=13 S H E O G M IO F S Y E NG C
+    p3-7     seg0 n=16 L J EO H NG C TH T AE J T X H T U OE
+    p3-7     seg2 n=3 P D TH
+    p3-7     seg4 n=11 A T X B M G IO S B X EO
+    p3-7     seg6 n=14 D O OE T TH AE C W J X EA G EA M
+    p15-22   seg0 n=9 F U L M A EA Y OE A
+    p15-22   seg1 n=11 L U NG N C U B N T F NG
+    p23-26   seg0 n=16 U A W NG G X D G I B I EO T B I Y
+    p27-32   seg0 n=19 M P Y L S O A AE H L E EO I M L L S C P
+    p33-39   seg0 n=10 D EO X C F I A W H G
+    p33-39   seg2 n=8 NG TH EO I F C OE EO
+    p33-39   seg6 n=3 IO C S
+    p54-55   seg0 n=9 A M NG D IO TH X I M
+
+A5: cross-section kappa over all relative shifts (peak z-scores)
+  p0-2     p0-2      z=3.8@35(n=694) z=3.8@-35(n=694)
+  p0-2     p3-7      z=4.4@-428(n=717) z=4.1@232(n=497)
+  p0-2     p8-14     z=3.6@45(n=684) z=3.5@543(n=186)
+  p0-2     p15-22    z=4.0@-1217(n=686) z=3.7@-1305(n=598)
+  p0-2     p23-26    z=3.4@-276(n=729) z=3.3@385(n=344)
+  p0-2     p27-32    z=3.6@128(n=601) z=3.6@-1088(n=345)
+  p0-2     p33-39    z=3.4@-410(n=729) z=3.1@547(n=182)
+  p0-2     p40-53    z=3.9@423(n=306) z=3.8@-1018(n=729)
+  p0-2     p54-55    z=3.6@270(n=308) z=2.9@420(n=308)
+  p3-7     p3-7      z=3.6@304(n=841) z=3.6@-304(n=841)
+  p3-7     p8-14     z=4.1@-1249(n=480) z=3.2@-1020(n=709)
+  p3-7     p15-22    z=4.6@987(n=158) z=3.5@-1684(n=219)
+  p3-7     p23-26    z=3.1@491(n=654) z=3.1@-701(n=320)
+  p3-7     p27-32    z=4.3@-833(n=600) z=3.8@-1007(n=426)
+  p3-7     p33-39    z=4.5@984(n=161) z=4.0@-26(n=1145)
+  p3-7     p40-53    z=4.1@-66(n=1145) z=3.8@-1404(n=1145)
+  p3-7     p54-55    z=3.9@699(n=308) z=3.6@125(n=308)
+  p8-14    p8-14     z=4.4@1532(n=197) z=4.4@-1532(n=197)
+  p8-14    p15-22    z=3.4@-651(n=1252) z=3.4@-1696(n=207)
+  p8-14    p23-26    z=4.1@-135(n=886) z=3.6@304(n=1021)
+  p8-14    p27-32    z=3.9@1439(n=290) z=3.8@-554(n=879)
+  p8-14    p33-39    z=4.0@-844(n=836) z=3.9@1510(n=219)
+  p8-14    p40-53    z=4.0@-1662(n=1346) z=3.6@-2608(n=400)
+  p8-14    p54-55    z=3.6@1049(n=308) z=3.4@1433(n=296)
+  p15-22   p15-22    z=3.4@1449(n=454) z=3.4@-1449(n=454)
+  p15-22   p23-26    z=3.5@-693(n=328) z=3.5@-800(n=221)
+  p15-22   p27-32    z=3.6@1421(n=482) z=3.5@-9(n=1424)
+  p15-22   p33-39    z=4.2@1632(n=271) z=3.6@-1319(n=361)
+  p15-22   p40-53    z=4.2@-1693(n=1315) z=4.1@-1247(n=1761)
+  p15-22   p54-55    z=3.9@1258(n=308) z=3.2@1581(n=308)
+  p23-26   p23-26    z=2.8@517(n=504) z=2.8@-517(n=504)
+  p23-26   p27-32    z=3.6@-150(n=1021) z=3.4@-313(n=1021)
+  p23-26   p33-39    z=3.7@-86(n=1021) z=3.6@-443(n=1021)
+  p23-26   p40-53    z=3.8@764(n=257) z=3.7@-1835(n=1021)
+  p23-26   p54-55    z=4.5@607(n=308) z=3.9@788(n=233)
+  p27-32   p27-32    z=3.4@743(n=690) z=3.4@-743(n=690)
+  p27-32   p33-39    z=4.4@-1333(n=347) z=4.0@1168(n=265)
+  p27-32   p40-53    z=3.7@-1267(n=1433) z=3.4@-2553(n=455)
+  p27-32   p54-55    z=3.9@618(n=308) z=3.9@202(n=308)
+  p33-39   p33-39    z=3.1@6(n=1674) z=3.1@-6(n=1674)
+  p33-39   p40-53    z=3.7@-2849(n=159) z=3.7@-2155(n=853)
+  p33-39   p54-55    z=3.9@981(n=308) z=3.9@577(n=308)
+  p40-53   p40-53    z=3.6@1010(n=1998) z=3.6@-1010(n=1998)
+  p40-53   p54-55    z=3.2@2413(n=308) z=3.2@2044(n=308)
+  p54-55   p54-55    z=4.0@129(n=179) z=4.0@-129(n=179)
+
+A6: running-key attack with LP solved plaintext (and cipher) as key, all offsets, 4 modes
+  key=solved_plain         p0-2     best ioc=1.097 at off=338 mode=add
+  key=solved_plain         p3-7     best ioc=1.085 at off=1411 mode=vig
+  key=solved_plain         p8-14    best ioc=1.093 at off=522 mode=vig
+  key=solved_plain         p15-22   best ioc=1.094 at off=1670 mode=vig
+  key=solved_plain         p23-26   best ioc=1.126 at off=508 mode=add
+  key=solved_plain         p27-32   best ioc=1.087 at off=615 mode=add
+  key=solved_plain         p33-39   best ioc=1.134 at off=2358 mode=vig
+  key=solved_plain         p40-53   best ioc=1.093 at off=2422 mode=add
+  key=solved_plain         p54-55   best ioc=1.145 at off=2297 mode=add
+  key=solved_plain_atbash  p0-2     best ioc=1.097 at off=338 mode=vig
+  key=solved_plain_atbash  p3-7     best ioc=1.085 at off=1411 mode=add
+  key=solved_plain_atbash  p8-14    best ioc=1.093 at off=522 mode=add
+  key=solved_plain_atbash  p15-22   best ioc=1.094 at off=1670 mode=add
+  key=solved_plain_atbash  p23-26   best ioc=1.126 at off=508 mode=vig
+  key=solved_plain_atbash  p27-32   best ioc=1.087 at off=615 mode=vig
+  key=solved_plain_atbash  p33-39   best ioc=1.134 at off=2358 mode=add
+  key=solved_plain_atbash  p40-53   best ioc=1.093 at off=2422 mode=vig
+  key=solved_plain_atbash  p54-55   best ioc=1.145 at off=2297 mode=vig
+  key=solved_cipher        p0-2     best ioc=1.087 at off=1958 mode=vig
+  key=solved_cipher        p3-7     best ioc=1.091 at off=787 mode=add
+  key=solved_cipher        p8-14    best ioc=1.116 at off=507 mode=add
+  key=solved_cipher        p15-22   best ioc=1.095 at off=2568 mode=add
+  key=solved_cipher        p23-26   best ioc=1.087 at off=635 mode=add
+  key=solved_cipher        p27-32   best ioc=1.088 at off=623 mode=vig
+  key=solved_cipher        p33-39   best ioc=1.085 at off=64 mode=add
+  key=solved_cipher        p40-53   best ioc=1.089 at off=1506 mode=add
+  key=solved_cipher        p54-55   best ioc=1.131 at off=728 mode=vig
