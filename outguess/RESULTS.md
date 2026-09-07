@@ -48,4 +48,8 @@ at every offset, in the raw form (c - k mod 29) and the chain form (step - k mod
 on 400-rune windows; the positive control recovers a planted key at the right offset with IoC
 1.77 against a noise ceiling near 1.19 for 200,000 offsets.
 
-Results are appended below as the scans complete.
+**No-key payloads as keystreams** (own-page section; bytes and 5-bit groups; raw and chain forms; both signs): 15 payloads tested, best IoC minus its noise ceiling at most -0.029, so every one is below noise. The run was still finishing its last payloads at commit time.
+
+**Growing string as a running key:** the detached scan had not reported at commit time (its output is block-buffered); the script and method are here for a re-run.
+
+**Page images as running keys:** queued behind the growing-string scan; not reported at commit time.
