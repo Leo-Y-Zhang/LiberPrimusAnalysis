@@ -24,6 +24,11 @@ key-skip rules Cicada used, 46 integer sequences in raw and chain form, autokeys
 feedback, running keys from Cicada-linked texts, shared keys between sections, digraphic ciphers)
 is excluded with a detector whose power was proven on synthetic ciphertext first.
 
+The key-source hunt that followed is in [outguess/RESULTS.md](outguess/RESULTS.md): outguess over
+all 75 page images (no key and 96 keys) recovers every known 2014 payload and nothing else, the
+page-56 SHA-512 matches none of 697,000 archive candidates, and the archive's long strings and the
+page images themselves are not the keystream.
+
 ## Reproduce
 
 Python 3.13 with numpy, scipy, sympy, mpmath and pillow. Set `PYTHONIOENCODING=utf-8` (runes in

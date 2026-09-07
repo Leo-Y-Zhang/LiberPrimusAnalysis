@@ -145,10 +145,13 @@ any text in the public archive, applied in any of the simple ways Cicada used on
 pages. Solving the remaining pages therefore looks like a search for the key source rather than
 a cryptanalytic problem, and the community's decade of work points the same way.
 
-Three threads remain open and cheap to pursue if new material appears: the outguess payloads of
-the page images (reported as 58 kB of noise, never verified here for lack of the tool), the
-unfound page behind the page-56 hash, and a physical re-examination of the doublet sites on the
-print edition.
+Two of the three cheap threads were then run to the end (`outguess/RESULTS.md`). Outguess over
+all 75 page images, with no key and with 96 Cicada-lexicon keys, recovered every known 2014
+payload byte for byte and nothing else: the unsolved pages give 58,152 bytes of 7.99-bit noise
+without a key, and every keyed extraction repeats the same bytes across most pages because the
+near-white pages share DCT coefficients at the key-selected positions. Hashing 692,438
+candidates from the archive and all 4,521 payloads against the page-56 SHA-512 found no match.
+The remaining thread is a physical re-examination of the doublet sites on the print edition.
 
 ## Sources
 
