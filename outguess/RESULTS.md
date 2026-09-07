@@ -50,6 +50,6 @@ on 400-rune windows; the positive control recovers a planted key at the right of
 
 **No-key payloads as keystreams** (own-page section; bytes and 5-bit groups; raw and chain forms; both signs): 15 payloads tested, best IoC minus its noise ceiling at most -0.029, so every one is below noise. The run was still finishing its last payloads at commit time.
 
-**Growing string as a running key:** the detached scan had not reported at commit time (its output is block-buffered); the script and method are here for a re-run.
+**Growing string** (2014 second onion, 1,820,650 bytes) **as a running key,** every offset, raw and chain forms, both signs: best IoC per section p0-2 1.145, p3-7 1.170, p8-14 1.159, p15-22 1.147, p23-26 1.145, p27-32 1.156, p33-39 1.156, p40-53 1.151, p54-55 1.206 (307-rune window, ceiling about 1.23), against a noise ceiling of about 1.20 for 1.8 million offsets. Not the keystream. Complete.
 
-**Page images as running keys:** queued behind the growing-string scan; not reported at commit time.
+**Page images (raw JPEG bytes) as running keys for their own section:** scan in progress at commit time (4 of 58 images, all below noise so far: best 1.144 against about 1.19); the final table is appended when it completes.
