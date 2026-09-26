@@ -2,7 +2,7 @@
 """(1) Chain-model sequence-key attack with correct alignment (key indexed by ciphertext position; doublets are
 placeholders that may or may not consume a key element), all bijections {1..28}->Z28 incl. discrete logs.
 (2) Power of IoC-of-differences vs kappa for shared running keys, then a re-scan of cross-section shared keys."""
-import os, sys, math, random
+import os, sys, random
 from collections import Counter
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import lp
@@ -168,8 +168,8 @@ for i, x in enumerate(names):
             dd = (aa - bb) % 29
             cnt = np.bincount(dd, minlength=29)
             v = (cnt * (cnt - 1)).sum() / (n * (n - 1) / 29)
-            # crude z using sd ≈ 0.75/sqrt(n) (empirical for IoC of uniform data)
-            z = (v - 1.0) / (0.75 / math.sqrt(n))
+            # z against the exact null spread of the IoC of uniform data (lp.ioc_null_sd)
+            z = (v - 1.0) / lp.ioc_null_sd(n)
             if z > best[0]:
                 best = (z, sft, n)
         allbest.append((best[0], x, y, best[1], best[2]))
