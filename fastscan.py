@@ -65,7 +65,7 @@ def scan_material(K, name, sections, W=W_DEFAULT, signs=(1, -1), forms=('raw', '
 
 
 def null_threshold(n_offsets, W=W_DEFAULT):
-    """Rough max-over-offsets noise level for IoC on W-rune windows: 1 + z*sd, sd ~ 0.75/sqrt(W)."""
-    import math
-    z = math.sqrt(2 * math.log(max(2, n_offsets)))
-    return 1 + z * 0.75 / math.sqrt(W)
+    """Max-over-offsets noise level for IoC on W-rune windows: the IoC that one of n_offsets
+    random alignments reaches by chance (lp.ioc_null_ceiling). The earlier 1 + z * 0.75 / sqrt(W)
+    matched the true spread only near W = 100 and was twice too wide at W = 400."""
+    return lp.ioc_null_ceiling(W, n_offsets)

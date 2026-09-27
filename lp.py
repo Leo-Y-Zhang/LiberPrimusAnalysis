@@ -232,6 +232,24 @@ def ioc(ix):
     return sum(v * (v - 1) for v in c.values()) / (n * (n - 1) / N)
 
 
+def ioc_null_sd(n, m=N):
+    """Standard deviation of the normalised index of coincidence of n independent uniform
+    symbols over an m-letter alphabet (ioc() for m = 29).
+
+    ioc = (X2 + n - m) / (n - 1), where X2 is the chi-square statistic of the counts against
+    uniform (m - 1 degrees of freedom, variance 2(m - 1)), so the sd is sqrt(2(m - 1)) / (n - 1).
+    It shrinks like 1/n, not 1/sqrt(n)."""
+    return math.sqrt(2 * (m - 1)) / (n - 1)
+
+
+def ioc_null_ceiling(n, trials, m=N):
+    """The ioc value that one of `trials` independent uniform windows of n symbols exceeds by
+    chance about once: the 1 - 1/trials quantile of the exact chi-square form above (its right
+    tail is heavier than a normal one)."""
+    from scipy.stats import chi2
+    return 1 + (chi2.isf(1 / max(2, trials), m - 1) - (m - 1)) / (n - 1)
+
+
 def periodic_ioc(ix, period):
     vals = [ioc(ix[k::period]) for k in range(period)]
     return sum(vals) / len(vals)
