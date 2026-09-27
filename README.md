@@ -35,6 +35,7 @@ Python 3.13 with numpy, scipy, sympy, mpmath and pillow. Set `PYTHONIOENCODING=u
 output).
 
 ```
+python -m unittest test_lp         # unit checks for lp.py and the IoC statistics (offline)
 python setup_sources.py            # clones the community transcriptions and n-gram tables into sources/
 python build_dataset.py            # dataset.json: all 18 sections, words, segments, known plaintexts
 python verify_solved.py            # GATE: the nine known solutions must reproduce
